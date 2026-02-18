@@ -9,158 +9,155 @@
  */
 
 import type {
-    AvailabilityStatus,
-    Currency,
-    EmploymentType,
-    Rate,
-    RatePeriod,
-    Skill,
-    VacancyStatus,
-} from "./api.types";
+  AvailabilityStatus,
+  Currency,
+  EmploymentType,
+  Rate,
+  RatePeriod,
+  Skill,
+  VacancyStatus,
+} from './api.types'
 
-export type { AvailabilityStatus, Currency, EmploymentType, Rate, RatePeriod, Skill, VacancyStatus };
+export type { AvailabilityStatus, Currency, EmploymentType, Rate, RatePeriod, Skill, VacancyStatus }
 
 // ─── Candidate compensation (display shape) ───────────────────────────────────
 
 export interface Compensation {
-    freelancer?: Rate;
-    contractor?: Rate;
-    directEmployment?: Rate;
+  freelancer?: Rate
+  contractor?: Rate
+  directEmployment?: Rate
 }
 
 /** rateType carries the display label derived from the employment mode. */
 export interface FreelanceRate {
-    type: "freelance";
-    rateType: "Hourly rate";
-    min: number;
-    max: number;
-    currency: string;
+  type: 'freelance'
+  rateType: 'Hourly rate'
+  min: number
+  max: number
+  currency: string
 }
 
 export interface PayrollContractorRate {
-    type: "payroll_contractor";
-    rateType: "Monthly salary";
-    min: number;
-    max: number;
-    currency: string;
+  type: 'payroll_contractor'
+  rateType: 'Monthly salary'
+  min: number
+  max: number
+  currency: string
 }
 
 export interface PermanentEmploymentRate {
-    type: "permanent_employment";
-    rateType: "Yearly salary";
-    min: number;
-    max: number;
-    currency: string;
+  type: 'permanent_employment'
+  rateType: 'Yearly salary'
+  min: number
+  max: number
+  currency: string
 }
 
-export type CompensationRate =
-    | FreelanceRate
-    | PayrollContractorRate
-    | PermanentEmploymentRate;
+export type CompensationRate = FreelanceRate | PayrollContractorRate | PermanentEmploymentRate
 
 // ─── Card section props ───────────────────────────────────────────────────────
 
 export interface ProfileInfo {
-    role: string;
-    /** e.g. "Amsterdam (Remote)" */
-    location: string;
-    avatarUrl?: string;
+  role: string
+  /** e.g. "Amsterdam (Remote)" */
+  location: string
+  avatarUrl?: string
 }
 
 export interface AvailabilityInfo {
-    status: AvailabilityStatus;
-    /** e.g. "1 April 2025" */
-    availableFrom: string;
+  status: AvailabilityStatus
+  /** e.g. "1 April 2025" */
+  availableFrom: string
 }
 
 /** Value must be in the range 0–100. */
 export interface MatchScore {
-    value: number;
+  value: number
 }
 
 // ─── CardProps ────────────────────────────────────────────────────────────────
 
 export interface CardProps {
-    className?: string;
+  className?: string
 
-    profile: ProfileInfo;
+  profile: ProfileInfo
 
-    availability: AvailabilityInfo;
+  availability: AvailabilityInfo
 
-    /**
-     * Full list of skills the candidate has.
-     * The component will show `visibleSkillsCount` chips and
-     * append a "+N" overflow badge for the remainder.
-     */
-    skills: Skill[];
+  /**
+   * Full list of skills the candidate has.
+   * The component will show `visibleSkillsCount` chips and
+   * append a "+N" overflow badge for the remainder.
+   */
+  skills: Skill[]
 
-    /**
-     * How many skill chips to render before showing the overflow badge.
-     * @default 4
-     */
-    visibleSkillsCount?: number;
+  /**
+   * How many skill chips to render before showing the overflow badge.
+   * @default 4
+   */
+  visibleSkillsCount?: number
 
-    /**
-     * Time since the profile was posted / last active.
-     * Displayed verbatim next to the clock icon (e.g. "2d", "1w").
-     */
-    postedAt: string;
+  /**
+   * Time since the profile was posted / last active.
+   * Displayed verbatim next to the clock icon (e.g. "2d", "1w").
+   */
+  postedAt: string
 
-    compensation: Compensation;
+  compensation: Compensation
 
-    matchScore: MatchScore;
+  matchScore: MatchScore
 }
 
 // ─── CandidateInfoProps ───────────────────────────────────────────────────────
 
 export interface DateRange {
-    startDate: string;
-    endDate: string;
+  startDate: string
+  endDate: string
 }
 
 export interface Person {
-    name: string;
-    avatarUrl?: string;
+  name: string
+  avatarUrl?: string
 }
 
 export interface VacancyManagement {
-    status: VacancyStatus;
-    hiringManager: Person;
-    vacancyCreatedBy: Person;
-    gloprosAccountManager: Person & { email?: string };
-    vacancyWorkspace: string; // e.g. "Private Workspace"
+  status: VacancyStatus
+  hiringManager: Person
+  vacancyCreatedBy: Person
+  gloprosAccountManager: Person & { email?: string }
+  vacancyWorkspace: string // e.g. "Private Workspace"
 }
 
 export interface CandidateInfoProps {
-    /** e.g. "CN00001" */
-    vacancyId: string;
+  /** e.g. "CN00001" */
+  vacancyId: string
 
-    jobTitle: string;
+  jobTitle: string
 
-    clientName: string;
+  clientName: string
 
-    employmentType: EmploymentType;
+  employmentType: EmploymentType
 
-    /** e.g. "40 h/week" */
-    hoursPerWeek: string;
+  /** e.g. "40 h/week" */
+  hoursPerWeek: string
 
-    /** e.g. "Amsterdam, the Netherlands" */
-    location: string;
+  /** e.g. "Amsterdam, the Netherlands" */
+  location: string
 
-    /** Assignment / contract date range */
-    workPeriod: DateRange;
+  /** Assignment / contract date range */
+  workPeriod: DateRange
 
-    /** Vacancy publication date range */
-    publicationPeriod: DateRange;
+  /** Vacancy publication date range */
+  publicationPeriod: DateRange
 
-    /** Number of AI-suggested candidate matches */
-    aiMatchesCount: number;
+  /** Number of AI-suggested candidate matches */
+  aiMatchesCount: number
 
-    /**
-     * One entry per employment-type rate block shown in the middle panel.
-     * The design shows up to three blocks (freelance, payroll, permanent).
-     */
-    compensationRates: CompensationRate[];
+  /**
+   * One entry per employment-type rate block shown in the middle panel.
+   * The design shows up to three blocks (freelance, payroll, permanent).
+   */
+  compensationRates: CompensationRate[]
 
-    vacancyManagement: VacancyManagement;
+  vacancyManagement: VacancyManagement
 }
