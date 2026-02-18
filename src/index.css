@@ -153,6 +153,8 @@
 
   /* Kanban layout */
   --width-kanban-col: var(--kanban-col-w);
+  --color-col-bg: var(--col-bg);
+  --text-2xs: 0.8125rem; /* 13px — column count label */
 
   /* Avatar palette */
   --color-avatar-1: var(--avatar-1);

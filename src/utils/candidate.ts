@@ -1,5 +1,14 @@
 import type { PipelineStage, Rate } from '../types/api.types'
 
+export const Stage = {
+  applications: 'applications',
+  under_review: 'under_review',
+  first_interview: 'first_interview',
+  contract_offer: 'contract_offer',
+  hired: 'hired',
+  not_proceeding: 'not_proceeding',
+} as const satisfies Record<string, PipelineStage>
+
 const CURRENCY_SYMBOL: Record<string, string> = {
   EUR: '€',
   USD: '$',
