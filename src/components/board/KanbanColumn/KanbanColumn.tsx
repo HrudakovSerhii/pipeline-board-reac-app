@@ -13,11 +13,11 @@ export function KanbanColumn({ stage, candidates }: KanbanColumnProps) {
   const { setNodeRef } = useDroppable({ id: stage })
 
   return (
-    <div className="flex flex-col h-full w-[var(--kanban-col-w)] shrink-0 bg-[var(--col-bg)] rounded-[10px] px-[12px]">
+    <div className="flex flex-col h-full w-kanban-col shrink-0 bg-col-bg rounded-[10px] px-[12px]">
       {/* Header */}
-      <div className="flex items-center gap-[8px] py-[14px] sticky top-0 bg-[var(--col-bg)] z-10">
+      <div className="flex items-center gap-[8px] py-[14px] sticky top-0 bg-col-bg z-10">
         <ColumnBadge stage={stage} />
-        <span className="text-[13px] text-[#6e6f7d]">({candidates.length})</span>
+        <span className="text-2xs text-muted-foreground">({candidates.length})</span>
       </div>
 
       {/* Droppable card list */}
