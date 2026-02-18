@@ -54,6 +54,16 @@
   --badge-contract-offer: #f59e0b;
   --badge-hired: #22c55e;
   --badge-not-proceeding: #ef4444;
+
+  /* Avatar palette — 8 bg/foreground pairs */
+  --avatar-1: #dbeafe; --avatar-1-foreground: #1d4ed8;
+  --avatar-2: #fce7f3; --avatar-2-foreground: #9d174d;
+  --avatar-3: #dcfce7; --avatar-3-foreground: #166534;
+  --avatar-4: #fef9c3; --avatar-4-foreground: #854d0e;
+  --avatar-5: #ede9fe; --avatar-5-foreground: #5b21b6;
+  --avatar-6: #ffedd5; --avatar-6-foreground: #9a3412;
+  --avatar-7: #e0f2fe; --avatar-7-foreground: #0369a1;
+  --avatar-8: #f0fdf4; --avatar-8-foreground: #15803d;
 }
 
 .dark {
@@ -143,6 +153,24 @@
 
   /* Kanban layout */
   --width-kanban-col: var(--kanban-col-w);
+
+  /* Avatar palette */
+  --color-avatar-1: var(--avatar-1);
+  --color-avatar-1-foreground: var(--avatar-1-foreground);
+  --color-avatar-2: var(--avatar-2);
+  --color-avatar-2-foreground: var(--avatar-2-foreground);
+  --color-avatar-3: var(--avatar-3);
+  --color-avatar-3-foreground: var(--avatar-3-foreground);
+  --color-avatar-4: var(--avatar-4);
+  --color-avatar-4-foreground: var(--avatar-4-foreground);
+  --color-avatar-5: var(--avatar-5);
+  --color-avatar-5-foreground: var(--avatar-5-foreground);
+  --color-avatar-6: var(--avatar-6);
+  --color-avatar-6-foreground: var(--avatar-6-foreground);
+  --color-avatar-7: var(--avatar-7);
+  --color-avatar-7-foreground: var(--avatar-7-foreground);
+  --color-avatar-8: var(--avatar-8);
+  --color-avatar-8-foreground: var(--avatar-8-foreground);
 }
 
 @layer base {
