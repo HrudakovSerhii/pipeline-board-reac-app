@@ -1,0 +1,1 @@
+export { RecruiterBadge } from './RecruiterBadge'
