@@ -1,4 +1,4 @@
-import type { PipelineStage, Rate } from '../types/api.types'
+import type { PipelineStage, Rate, VacancyBudget } from '../types/api.types'
 
 export const Stage = {
   applications: 'applications',
@@ -52,4 +52,21 @@ export function daysAgoLabel(postedAt: string): string {
 
 export function stageLabel(stage: PipelineStage): string {
   return STAGE_LABEL[stage]
+}
+
+const BUDGET_LABELS: Record<VacancyBudget['type'], { title: string; subtitle: string }> = {
+  freelance: { title: 'Freelance', subtitle: 'Hourly rate' },
+  payroll_contractor: { title: 'Payroll contractor', subtitle: 'Monthly salary' },
+  permanent_employment: { title: 'Permanent employment', subtitle: 'Yearly salary' },
+}
+
+export function formatBudgetRange(budget: VacancyBudget): string {
+  const symbol = CURRENCY_SYMBOL[budget.currency] ?? `${budget.currency} `
+  const min = budget.min.toLocaleString('en-US')
+  const max = budget.max.toLocaleString('en-US')
+  return `${min}–${max} ${symbol}`
+}
+
+export function budgetLabel(budget: VacancyBudget): { title: string; subtitle: string } {
+  return BUDGET_LABELS[budget.type]
 }

@@ -55,6 +55,14 @@
   --badge-hired: #22c55e;
   --badge-not-proceeding: #ef4444;
 
+  /* Typography */
+  --caption: #434343;     /* secondary label text (e.g. "Hourly rate", "Publication period:") */
+  --brand-dark: #063b83;  /* dark brand blue — rate values, skill chip text */
+
+  /* Status badges */
+  --status-public: #f9d656;
+  --recruiter-badge: #e8b600;
+
   /* Brand / interactive */
   --brand: #0053cd;
   --brand-subtle: #ecf5ff;
@@ -173,6 +181,14 @@
   --color-badge-contract-offer: var(--badge-contract-offer);
   --color-badge-hired: var(--badge-hired);
   --color-badge-not-proceeding: var(--badge-not-proceeding);
+
+  /* Typography */
+  --color-caption: var(--caption);
+  --color-brand-dark: var(--brand-dark);
+
+  /* Status badges */
+  --color-status-public: var(--status-public);
+  --color-recruiter-badge: var(--recruiter-badge);
 
   /* Brand / interactive */
   --color-brand: var(--brand);
