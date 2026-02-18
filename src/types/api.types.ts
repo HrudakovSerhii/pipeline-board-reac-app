@@ -80,6 +80,18 @@ export interface PermanentBudget {
 
 export type VacancyBudget = FreelanceBudget | PayrollBudget | PermanentBudget
 
+// ─── AI scoring ───────────────────────────────────────────────────────────────
+
+/** Per-category AI match breakdown. Provided by AI scoring service; aggregated into BoardResponse. */
+export interface AiMatchBreakdown {
+  experience: number // 0–100
+  skills: number // 0–100
+  rate: number // 0–100
+  location: number // 0 = no match, 100 = exact match
+  availability: number // 0–100
+  industry: number // 0–100
+}
+
 // ─── Entities ─────────────────────────────────────────────────────────────────
 
 export interface CandidateAvailability {
@@ -107,6 +119,19 @@ export interface Candidate {
   matchScore: number // 0–100
   stage: PipelineStage
   isShortlisted: boolean
+  /** True if the candidate is a registered GloPros platform professional. */
+  isGloPros: boolean
+  /** Recruiter-authored note from the vacancy-candidate negotiation; absent if not negotiated. */
+  negotiationNote?: string
+  /** Per-category AI breakdown. Absent for candidates not yet scored against this vacancy. */
+  aiMatchBreakdown?: AiMatchBreakdown
+  /** Offer acceptance — set when stage transitions to 'hired'. */
+  hiredAt?: string // ISO 8601
+  hiredBy?: string // recruiter name
+  /** Decline info — set when stage transitions to 'not_proceeding'. */
+  declinedAt?: string // ISO 8601
+  declinedBy?: string
+  declineReason?: string
 }
 
 export interface Vacancy {
