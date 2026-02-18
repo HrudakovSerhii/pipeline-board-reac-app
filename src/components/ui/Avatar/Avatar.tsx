@@ -6,29 +6,36 @@ export interface AvatarProps {
   name: string
   avatarUrl?: string
   isGloPros: boolean
+  isBlurred?: boolean
   size?: 'sm' | 'md'
 }
 
-export function Avatar({ name, avatarUrl, isGloPros, size = 'md' }: AvatarProps) {
+export function Avatar({ name, avatarUrl, isGloPros, isBlurred, size = 'md' }: AvatarProps) {
   const palette = avatarPalette(name)
   const initials = nameInitials(name)
   const sizeClass = size === 'sm' ? 'size-[36px] text-[12px]' : 'size-[44px] text-[14px]'
 
   return (
     <div
-      className={cn(
-        'shrink-0 rounded-bl-[30px] rounded-br-[30px] rounded-tl-[30px] rounded-tr-[3px] flex items-center justify-center relative overflow-hidden',
-        sizeClass,
-        !avatarUrl && palette.bgClass,
-      )}
+      className="flex items-center justify-center relative"
     >
-      {avatarUrl ? (
-        <img src={avatarUrl} alt={name} className="size-full object-cover" />
-      ) : (
-        <span className={cn('leading-none select-none', !isGloPros && palette.textClass)}>
+      <div className={cn(
+          'shrink-0 rounded-bl-[30px] rounded-br-[30px] rounded-tl-[30px] rounded-tr-[3px] flex items-center overflow-hidden',
+          sizeClass,
+          !avatarUrl && palette.bgClass,
+      )}>
+        {avatarUrl ? (
+            <img src={avatarUrl} alt={name} className={cn(
+                'size-full object-cover',
+                isBlurred && 'blur-xs',
+            )} />
+        ) : (
+            <span className={cn('leading-none select-none', !isGloPros && palette.textClass)}>
           {initials}
         </span>
-      )}
+        )}
+        {/*{isBlurred && <div className="w-full h-full relative backdrop-blur-sm" />}*/}
+      </div>
 
       {isGloPros && (
         <div className="absolute bottom-0 right-0 bg-[rgba(230,140,13,0.9)] rounded-tl-[6px] size-[14px] flex items-center justify-center">

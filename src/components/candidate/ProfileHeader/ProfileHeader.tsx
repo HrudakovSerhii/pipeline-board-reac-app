@@ -32,7 +32,7 @@ export function ProfileHeader({ candidate, variant }: ProfileHeaderProps) {
   if (variant === 'applications') {
     return (
       <div className="flex gap-[8px] items-center w-full">
-        <Avatar name={candidate.name} avatarUrl={candidate.avatarUrl} isGloPros={candidate.isGloPros} />
+        <Avatar name={candidate.name} avatarUrl={candidate.avatarUrl} isGloPros={candidate.isGloPros} isBlurred/>
         <div className="flex flex-col gap-[3px] min-w-0">
           <span className="text-[14px] text-[#0d102b] tracking-[0.28px] truncate">{candidate.role}</span>
           <div className="flex gap-[4px] items-center">
@@ -46,7 +46,7 @@ export function ProfileHeader({ candidate, variant }: ProfileHeaderProps) {
 
   return (
     <div className="flex gap-[8px] items-center w-full">
-      <Avatar name={candidate.name} avatarUrl={candidate.avatarUrl} isGloPros={candidate.isGloPros} />
+      <Avatar name={candidate.name} avatarUrl={candidate.avatarUrl} isGloPros={candidate.isGloPros} isBlurred={false}/>
       <div className="flex flex-col gap-[3px] min-w-0">
         <span className="text-[15px] text-[#0d102b] tracking-[0.3px] truncate">{candidate.name}</span>
         <div className="flex flex-wrap gap-[4px] items-center">
