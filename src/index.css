@@ -52,8 +52,8 @@
   --badge-under-review: #6366f1;
   --badge-first-interview: #00bcff;
   --badge-contract-offer: #f59e0b;
-  --badge-hired: #22c55e;
-  --badge-not-proceeding: #ef4444;
+  --badge-hired: #00A63E;
+  --badge-not-proceeding: #E7000B;
 
   /* Typography */
   --caption: #434343;     /* secondary label text (e.g. "Hourly rate", "Publication period:") */
@@ -69,6 +69,7 @@
   --brand-hover: #0041a8;
   --brand-navy: #052d69;
   --nav-text: #18233a;
+  --secondary: #0D102B;
 
   /* UI surfaces */
   --pill-bg: #f1f5f9;

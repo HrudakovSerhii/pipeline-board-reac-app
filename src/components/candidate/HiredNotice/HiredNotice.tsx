@@ -11,9 +11,9 @@ export function HiredNotice({ hiredAt, hiredBy }: HiredNoticeProps) {
   })
 
   return (
-    <div className="w-full rounded-[6px] bg-[#f0fdf4] border border-[#bbf7d0] px-[12px] py-[8px] flex flex-col gap-[2px]">
-      <span className="text-[11px] text-[#166534]">Professional has accepted the offer</span>
-      <span className="text-[10px] text-[#4ade80]">
+    <div className="w-full border-l-2 border-[#0053cd] pl-[12px] py-[4px] flex flex-col gap-[2px]">
+      <span className="text-[11px] text-[#0053cd]">Professional has accepted the offer</span>
+      <span className="text-[10px] text-[#0D102B]">
         Offer accepted {date} · Sent by {hiredBy}
       </span>
     </div>
