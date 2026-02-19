@@ -213,9 +213,7 @@ function ManagementPanel({ vacancy }: { vacancy: Vacancy }) {
           <div key={label} className="flex items-center gap-[4px] w-full">
             <span className="text-muted-foreground text-sm w-[140px] shrink-0">{label}</span>
             <div className="flex items-center gap-[8px] flex-1 min-w-0">
-              {person && (
-                <Avatar name={person.name} isGloPros={false} size="sm" />
-              )}
+              {person && <PhotoAvatar name={person.name} avatarUrl={person.avatarUrl} />}
               <span className="text-foreground text-sm truncate">
                 {person ? person.name : value}
               </span>
