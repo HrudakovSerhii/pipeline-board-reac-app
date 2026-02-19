@@ -20,3 +20,13 @@ export {
 export { SearchIcon, PlusIcon, FilterLineIcon } from './search-icons.tsx'
 
 export { NAV_ICON_MAP } from './nav-icon-map'
+
+export {
+  LocationIcon,
+  CalendarIcon,
+  ClockIcon,
+  DotsMenuIcon,
+  SparklesIcon,
+  EditIcon,
+  MailIcon,
+} from './vacancy-icons'
