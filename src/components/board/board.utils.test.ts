@@ -10,7 +10,7 @@ function makeCandidate(overrides: Partial<Candidate> & { id: string }): Candidat
     availability: { status: 'available', availableFrom: '2026-03-01' },
     skills: [],
     postedAt: '2026-01-01T00:00:00Z',
-    compensation: {},
+    compensation: [],
     matchScore: 80,
     stage: 'applications',
     isShortlisted: false,
