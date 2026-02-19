@@ -1,4 +1,4 @@
-import type { PipelineStage, Rate, VacancyBudget } from '../types/api.types'
+import type { BudgetType, PipelineStage, Rate, RateType, VacancyBudget } from '../types/api.types'
 
 export const Stage = {
   applications: 'applications',
@@ -9,13 +9,22 @@ export const Stage = {
   not_proceeding: 'not_proceeding',
 } as const satisfies Record<string, PipelineStage>
 
-const CURRENCY_SYMBOL: Record<string, string> = {
-  EUR: '€',
-  USD: '$',
-  GBP: '£',
-  CHF: 'CHF ',
-  PLN: 'zł',
-  SEK: 'kr',
+/**
+ * Extracts the display symbol for any ISO 4217 currency code using Intl.
+ * Falls back to the code itself when the environment lacks full ICU data.
+ */
+function currencySymbol(currency: string): string {
+  try {
+    const parts = new Intl.NumberFormat('en', {
+      style: 'currency',
+      currency,
+      currencyDisplay: 'narrowSymbol',
+      maximumFractionDigits: 0,
+    }).formatToParts(0)
+    return parts.find((p) => p.type === 'currency')?.value ?? currency
+  } catch {
+    return currency
+  }
 }
 
 const PERIOD_LABEL: Record<Rate['period'], string> = {
@@ -36,8 +45,8 @@ const STAGE_LABEL: Record<PipelineStage, string> = {
 }
 
 export function formatRate(rate: Rate): string {
-  const symbol = CURRENCY_SYMBOL[rate.currency] ?? `${rate.currency} `
-  const amount = rate.amount.toLocaleString('en-US')
+  const symbol = currencySymbol(rate.currency)
+  const amount = formatNumber(rate.amount)
   const period = PERIOD_LABEL[rate.period]
   return `${symbol}${amount}/${period}`
 }
@@ -54,19 +63,28 @@ export function stageLabel(stage: PipelineStage): string {
   return STAGE_LABEL[stage]
 }
 
-const BUDGET_LABELS: Record<VacancyBudget['type'], { title: string; subtitle: string }> = {
-  freelance: { title: 'Freelance', subtitle: 'Hourly rate' },
-  payroll_contractor: { title: 'Payroll contractor', subtitle: 'Monthly salary' },
-  permanent_employment: { title: 'Permanent employment', subtitle: 'Yearly salary' },
+const BUDGET_TYPE_TITLE: Record<BudgetType, string> = {
+  freelance: 'Freelance',
+  contractor: 'Payroll contractor',
+  employment: 'Permanent employment',
+}
+
+const RATE_TYPE_SUBTITLE: Record<RateType, string> = {
+  hourly: 'Hourly rate',
+  monthly: 'Monthly salary',
+  yearly: 'Yearly salary',
+}
+
+/** Formats a number with space as thousands separator: 15000 → "15 000", 150000 → "150 000" */
+export function formatNumber(n: number): string {
+  return Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0')
 }
 
 export function formatBudgetRange(budget: VacancyBudget): string {
-  const symbol = CURRENCY_SYMBOL[budget.currency] ?? `${budget.currency} `
-  const min = budget.min.toLocaleString('en-US')
-  const max = budget.max.toLocaleString('en-US')
-  return `${min}–${max} ${symbol}`
+  const symbol = currencySymbol(budget.currency)
+  return `${formatNumber(budget.min)}–${formatNumber(budget.max)} ${symbol}`
 }
 
 export function budgetLabel(budget: VacancyBudget): { title: string; subtitle: string } {
-  return BUDGET_LABELS[budget.type]
+  return { title: BUDGET_TYPE_TITLE[budget.type], subtitle: RATE_TYPE_SUBTITLE[budget.rateType] }
 }

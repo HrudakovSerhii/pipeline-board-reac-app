@@ -164,7 +164,7 @@ function LeftPanel({ vacancy }: { vacancy: Vacancy }) {
 
 function RatePanel({ budgets }: { budgets: VacancyBudget[] }) {
   return (
-    <div className="relative flex flex-col self-stretch w-[176px] shrink-0 bg-brand-subtle rounded-bl-[30px] border border-input-border">
+    <div className="relative flex flex-col self-stretch w-[176px] shrink-0 bg-brand-subtle rounded-bl-[30px] border border-input-border overflow-hidden">
       <div className="flex flex-col flex-1 divide-y divide-input-border">
         {budgets.map((budget) => {
           const { title, subtitle } = budgetLabel(budget)

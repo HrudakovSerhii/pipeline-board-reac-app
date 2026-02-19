@@ -57,28 +57,16 @@ export interface CandidateCompensation {
 
 // ─── Vacancy budget ───────────────────────────────────────────────────────────
 
-export interface FreelanceBudget {
-  type: 'freelance'
+export type BudgetType = 'freelance' | 'contractor' | 'employment'
+export type RateType = 'hourly' | 'monthly' | 'yearly'
+
+export interface VacancyBudget {
+  type: BudgetType
+  rateType: RateType
   min: number
   max: number
   currency: string
 }
-
-export interface PayrollBudget {
-  type: 'payroll_contractor'
-  min: number
-  max: number
-  currency: string
-}
-
-export interface PermanentBudget {
-  type: 'permanent_employment'
-  min: number
-  max: number
-  currency: string
-}
-
-export type VacancyBudget = FreelanceBudget | PayrollBudget | PermanentBudget
 
 // ─── AI scoring ───────────────────────────────────────────────────────────────
 

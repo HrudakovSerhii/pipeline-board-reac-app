@@ -43,7 +43,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Kanban layout tokens */
-  --kanban-col-w: 280px;
+  --kanban-col-w: 466px;
   --kanban-col-gap: 14px;
   --col-bg: #f2f4f7;
 
