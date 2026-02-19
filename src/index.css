@@ -55,6 +55,29 @@
   --badge-hired: #22c55e;
   --badge-not-proceeding: #ef4444;
 
+  /* Brand / interactive */
+  --brand: #0053cd;
+  --brand-subtle: #ecf5ff;
+  --brand-hover: #0041a8;
+  --brand-navy: #052d69;
+  --nav-text: #18233a;
+
+  /* UI surfaces */
+  --pill-bg: #f1f5f9;
+  --divider: #cad5e2;
+  --input-border: #a9b8cf;
+  --search-bg: #f9fbfd;
+  --notification: #e7000b;
+
+  /* Add-new button amber glow */
+  --add-btn-bg: rgba(255, 226, 124, 0.42);
+  --add-btn-bg-hover: rgba(255, 226, 124, 0.6);
+  --add-btn-border: rgba(255, 202, 128, 0.4);
+
+  /* Sidebar footer CTA gradient */
+  --gradient-cta-from: #061d3d;
+  --gradient-cta-to: #093e8c;
+
   /* Avatar palette — 8 bg/foreground pairs */
   --avatar-1: #dbeafe; --avatar-1-foreground: #1d4ed8;
   --avatar-2: #fce7f3; --avatar-2-foreground: #9d174d;
@@ -150,6 +173,25 @@
   --color-badge-contract-offer: var(--badge-contract-offer);
   --color-badge-hired: var(--badge-hired);
   --color-badge-not-proceeding: var(--badge-not-proceeding);
+
+  /* Brand / interactive */
+  --color-brand: var(--brand);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-navy: var(--brand-navy);
+  --color-nav-text: var(--nav-text);
+
+  /* UI surfaces */
+  --color-pill-bg: var(--pill-bg);
+  --color-divider: var(--divider);
+  --color-input-border: var(--input-border);
+  --color-search-bg: var(--search-bg);
+  --color-notification: var(--notification);
+  --color-add-btn-bg: var(--add-btn-bg);
+  --color-add-btn-bg-hover: var(--add-btn-bg-hover);
+  --color-add-btn-border: var(--add-btn-border);
+  --color-gradient-cta-from: var(--gradient-cta-from);
+  --color-gradient-cta-to: var(--gradient-cta-to);
 
   /* Kanban layout */
   --width-kanban-col: var(--kanban-col-w);
