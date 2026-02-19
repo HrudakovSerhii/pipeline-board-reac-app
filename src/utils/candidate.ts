@@ -1,4 +1,4 @@
-import type { BudgetType, PipelineStage, Rate, RateType, VacancyBudget } from '../types/api.types'
+import type { CandidateRate, EngagementMode, PipelineStage, RatePeriod, VacancyBudget } from '../types/api.types'
 
 export const Stage = {
   applications: 'applications',
@@ -27,12 +27,26 @@ function currencySymbol(currency: string): string {
   }
 }
 
-const PERIOD_LABEL: Record<Rate['period'], string> = {
+const PERIOD_LABEL: Record<RatePeriod, string> = {
   hour: 'h',
   day: 'd',
   week: 'wk',
   month: 'mo',
   year: 'yr',
+}
+
+const PERIOD_DISPLAY: Record<RatePeriod, string> = {
+  hour: 'Hourly rate',
+  day: 'Daily rate',
+  week: 'Weekly rate',
+  month: 'Monthly salary',
+  year: 'Yearly salary',
+}
+
+const MODE_DISPLAY: Record<EngagementMode, string> = {
+  freelance: 'Freelance',
+  contractor: 'Payroll contractor',
+  employment: 'Permanent employment',
 }
 
 const STAGE_LABEL: Record<PipelineStage, string> = {
@@ -44,7 +58,7 @@ const STAGE_LABEL: Record<PipelineStage, string> = {
   not_proceeding: 'Not Proceeding',
 }
 
-export function formatRate(rate: Rate): string {
+export function formatRate(rate: CandidateRate): string {
   const symbol = currencySymbol(rate.currency)
   const amount = formatNumber(rate.amount)
   const period = PERIOD_LABEL[rate.period]
@@ -63,18 +77,6 @@ export function stageLabel(stage: PipelineStage): string {
   return STAGE_LABEL[stage]
 }
 
-const BUDGET_TYPE_TITLE: Record<BudgetType, string> = {
-  freelance: 'Freelance',
-  contractor: 'Payroll contractor',
-  employment: 'Permanent employment',
-}
-
-const RATE_TYPE_SUBTITLE: Record<RateType, string> = {
-  hourly: 'Hourly rate',
-  monthly: 'Monthly salary',
-  yearly: 'Yearly salary',
-}
-
 /** Formats a number with space as thousands separator: 15000 → "15 000", 150000 → "150 000" */
 export function formatNumber(n: number): string {
   return Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0')
@@ -86,5 +88,9 @@ export function formatBudgetRange(budget: VacancyBudget): string {
 }
 
 export function budgetLabel(budget: VacancyBudget): { title: string; subtitle: string } {
-  return { title: BUDGET_TYPE_TITLE[budget.type], subtitle: RATE_TYPE_SUBTITLE[budget.rateType] }
+  return { title: MODE_DISPLAY[budget.mode], subtitle: PERIOD_DISPLAY[budget.period] }
+}
+
+export function rateModeLabel(mode: EngagementMode): string {
+  return MODE_DISPLAY[mode]
 }

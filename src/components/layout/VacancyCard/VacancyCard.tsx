@@ -169,7 +169,7 @@ function RatePanel({ budgets }: { budgets: VacancyBudget[] }) {
         {budgets.map((budget) => {
           const { title, subtitle } = budgetLabel(budget)
           return (
-            <div key={budget.type} className="flex flex-col gap-[2px] px-[12px] py-[10px]">
+            <div key={budget.mode} className="flex flex-col gap-[2px] px-[12px] py-[10px]">
               <span className="text-foreground text-[12px] font-bold leading-[16px]">{title}</span>
               <span className="text-caption text-[12px] leading-[16px]">{subtitle}</span>
               <span className="text-brand-dark text-[16px] font-medium tracking-[0.15px] mt-[2px]">

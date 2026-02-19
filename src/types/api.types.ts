@@ -36,36 +36,28 @@ export interface Person {
   avatarUrl?: string
 }
 
+// ─── Compensation primitives (shared by candidate + vacancy) ─────────────────
+
+export type EngagementMode = 'freelance' | 'contractor' | 'employment'
+
 // ─── Candidate compensation ───────────────────────────────────────────────────
 
-/**
- * Candidate's asking rate for a given engagement mode.
- * Keeping `amount` as `number` makes comparison easy; format at the UI layer.
- */
-export interface Rate {
+/** Single asking rate for one engagement mode. */
+export interface CandidateRate {
+  mode: EngagementMode
   amount: number
   currency: Currency
   period: RatePeriod
 }
 
-/** What the candidate charges, keyed by engagement mode. */
-export interface CandidateCompensation {
-  freelancer?: Rate
-  contractor?: Rate
-  directEmployment?: Rate
-}
-
 // ─── Vacancy budget ───────────────────────────────────────────────────────────
 
-export type BudgetType = 'freelance' | 'contractor' | 'employment'
-export type RateType = 'hourly' | 'monthly' | 'yearly'
-
 export interface VacancyBudget {
-  type: BudgetType
-  rateType: RateType
+  mode: EngagementMode
   min: number
   max: number
-  currency: string
+  currency: Currency
+  period: RatePeriod
 }
 
 // ─── AI scoring ───────────────────────────────────────────────────────────────
@@ -103,7 +95,7 @@ export interface Candidate {
   availability: CandidateAvailability
   skills: Skill[]
   postedAt: string // ISO 8601 datetime
-  compensation: CandidateCompensation
+  compensation: CandidateRate[]
   matchScore: number // 0–100
   stage: PipelineStage
   isShortlisted: boolean

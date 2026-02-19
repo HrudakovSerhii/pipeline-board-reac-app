@@ -32,14 +32,12 @@ export function CandidateCard({ candidate, stage }: CandidateCardProps) {
         />
       </div>
 
-      {!isApplications && (
-        <div className="px-[14px]">
-          <AvailabilityTags
+      <div className="px-[14px]">
+        <AvailabilityTags
             availability={candidate.availability}
             negotiationNote={candidate.negotiationNote}
-          />
-        </div>
-      )}
+        />
+      </div>
 
       {stage === Stage.hired && candidate.hiredAt && candidate.hiredBy && (
         <div className="px-[14px]">
@@ -57,24 +55,20 @@ export function CandidateCard({ candidate, stage }: CandidateCardProps) {
         </div>
       )}
 
-      {!isApplications && (
-        <div className="px-[14px]">
-          <SkillsRow
+      <div className="px-[14px]">
+        <SkillsRow
             skills={candidate.skills}
             visibleCount={VISIBLE_SKILLS}
             postedAt={candidate.postedAt}
-          />
-        </div>
-      )}
+        />
+      </div>
 
-      {!isApplications && (
-        <div className="px-[14px] flex gap-[12px] items-start">
-          <div className="flex-1 min-w-0">
-            <CompensationSummary compensation={candidate.compensation} />
-          </div>
-          <ScoreCircle score={candidate.matchScore} />
+      <div className="px-[14px] flex gap-[12px] items-start">
+        <div className="flex-1 min-w-0">
+          <CompensationSummary compensation={candidate.compensation} />
         </div>
-      )}
+        <ScoreCircle score={candidate.matchScore} />
+      </div>
 
       {isApplications && candidate.aiMatchBreakdown && (
         <div className="px-[14px]">
