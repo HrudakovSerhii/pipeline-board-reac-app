@@ -14,4 +14,7 @@ export {
   CandidateLocationIcon,
   CandidateJobIcon,
   CandidateClockIcon,
+  SearchIcon,
+  PlusIcon,
+  FilterLineIcon,
 } from './icons'

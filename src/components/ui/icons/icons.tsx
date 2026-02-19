@@ -251,3 +251,54 @@ export function CheckmarkIcon({ className = 'size-4.5 shrink-0' }: { className?:
     </svg>
   )
 }
+
+// — Search / toolbar icons (16×16 viewBox) —
+
+export function SearchIcon({ className = 'size-3.5 shrink-0' }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 16 16"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <circle cx="7" cy="7" r="4.5" />
+      <path d="M10.5 10.5L14 14" />
+    </svg>
+  )
+}
+
+export function PlusIcon({ className = 'size-3.5 shrink-0' }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 16 16"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <path d="M8 3v10M3 8h10" />
+    </svg>
+  )
+}
+
+export function FilterLineIcon({ className = 'size-3.5 shrink-0' }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 16 16"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <path d="M2 4h12M4 8h8M6 12h4" />
+    </svg>
+  )
+}
