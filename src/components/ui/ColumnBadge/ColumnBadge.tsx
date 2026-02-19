@@ -4,6 +4,7 @@ import { cn } from '../../../utils/cn'
 
 export interface ColumnBadgeProps {
   stage: PipelineStage
+  value: number
 }
 
 const STAGE_CLASS: Record<PipelineStage, string> = {
@@ -15,15 +16,13 @@ const STAGE_CLASS: Record<PipelineStage, string> = {
   not_proceeding: 'bg-badge-not-proceeding',
 }
 
-export function ColumnBadge({ stage }: ColumnBadgeProps) {
+export function ColumnBadge({ stage, value }: ColumnBadgeProps) {
   return (
-    <span
-      className={cn(
-        'inline-flex items-center h-[20px] px-[8px] rounded-full text-[11px] text-white font-medium',
-        STAGE_CLASS[stage],
-      )}
-    >
-      {stageLabel(stage)}
-    </span>
+    <div className="inline-flex items-center text-brand-dark font-medium gap-[4px]">
+      <span className={cn('rounded-full w-[12px] h-[12px]  text-[14px]', STAGE_CLASS[stage])} />
+      <span>
+        {stageLabel(stage)} ({value.toString()})
+      </span>
+    </div>
   )
 }

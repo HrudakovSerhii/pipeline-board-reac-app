@@ -8,9 +8,9 @@ export interface AvailabilityTagsProps {
 }
 
 const STATUS_DOT: Record<CandidateAvailability['status'], string> = {
-  available: 'bg-[#00a63e]',
-  soon: 'bg-[#f59e0b]',
-  unavailable: 'bg-[#ef4444]',
+  available: 'bg-badge-hired',
+  soon: 'bg-badge-contract-offer',
+  unavailable: 'bg-unavailable',
 }
 
 const STATUS_LABEL: Record<CandidateAvailability['status'], string> = {
@@ -21,10 +21,10 @@ const STATUS_LABEL: Record<CandidateAvailability['status'], string> = {
 
 function CheckCircleIcon() {
   return (
-    <div className="shrink-0 size-[14px]">
+    <div className="shrink-0 size-[14px] text-muted-foreground">
       <svg className="block size-full" fill="none" viewBox="0 0 16 16">
-        <path d={icons.p2cf40a0} stroke="#6E6F7D" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="8" cy="8" r="6" stroke="#6E6F7D" strokeLinecap="round" strokeLinejoin="round" />
+        <path d={icons.p2cf40a0} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="8" cy="8" r="6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   )

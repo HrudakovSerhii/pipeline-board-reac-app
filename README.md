@@ -20,8 +20,7 @@ nginx
 React app
  ├── src/api/          fetch functions + API → component prop mappers
  ├── src/types/
- │   ├── api.types.ts  entity types, OpenAPI source of truth
- │   └── design.types.ts  Figma-derived component props (reference)
+ │   └── api.types.ts  entity types, OpenAPI source of truth
  └── src/components/   board, columns, cards
 ```
 
@@ -44,10 +43,6 @@ Vacancy budget: `FreelanceBudget` · `PayrollBudget` · `PermanentBudget` · `Va
 Entities: `Candidate` · `Vacancy` · `VacancyManagement`
 
 API shapes: `BoardResponse` · `UpdateCandidateRequest`
-
-### `src/types/design.types.ts`
-
-Figma-derived component props. Reference only — not used for API contracts. Imports shared primitives from `api.types.ts` to prevent enum drift.
 
 Card: `CardProps` · `ProfileInfo` · `AvailabilityInfo` · `MatchScore` · `Compensation`
 

@@ -16,16 +16,15 @@ export function KanbanColumn({ stage, candidates }: KanbanColumnProps) {
     <div className="flex flex-col h-full w-kanban-col shrink-0 bg-col-bg rounded-[10px] px-[12px]">
       {/* Header */}
       <div className="flex items-center gap-[8px] py-[14px] sticky top-0 bg-col-bg z-10">
-        <ColumnBadge stage={stage} />
-        <span className="text-2xs text-muted-foreground">({candidates.length})</span>
+        <ColumnBadge stage={stage} value={candidates.length} />
       </div>
 
       {/* Droppable card list */}
-      <SortableContext
-        items={candidates.map((c) => c.id)}
-        strategy={verticalListSortingStrategy}
-      >
-        <div ref={setNodeRef} className="flex flex-col gap-[12px] overflow-y-auto pb-[16px] flex-1 min-h-[80px]">
+      <SortableContext items={candidates.map((c) => c.id)} strategy={verticalListSortingStrategy}>
+        <div
+          ref={setNodeRef}
+          className="flex flex-col gap-[12px] overflow-y-auto pb-[16px] flex-1 min-h-[80px]"
+        >
           {candidates.map((candidate) => (
             <SortableCandidateCard key={candidate.id} candidate={candidate} stage={stage} />
           ))}

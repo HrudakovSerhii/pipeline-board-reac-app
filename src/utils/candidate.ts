@@ -1,4 +1,4 @@
-import type { PipelineStage, Rate } from '../types/api.types'
+import type { CandidateRate, EngagementMode, PipelineStage, RatePeriod, VacancyBudget } from '../types/api.types'
 
 export const Stage = {
   applications: 'applications',
@@ -9,21 +9,44 @@ export const Stage = {
   not_proceeding: 'not_proceeding',
 } as const satisfies Record<string, PipelineStage>
 
-const CURRENCY_SYMBOL: Record<string, string> = {
-  EUR: '€',
-  USD: '$',
-  GBP: '£',
-  CHF: 'CHF ',
-  PLN: 'zł',
-  SEK: 'kr',
+/**
+ * Extracts the display symbol for any ISO 4217 currency code using Intl.
+ * Falls back to the code itself when the environment lacks full ICU data.
+ */
+function currencySymbol(currency: string): string {
+  try {
+    const parts = new Intl.NumberFormat('en', {
+      style: 'currency',
+      currency,
+      currencyDisplay: 'narrowSymbol',
+      maximumFractionDigits: 0,
+    }).formatToParts(0)
+    return parts.find((p) => p.type === 'currency')?.value ?? currency
+  } catch {
+    return currency
+  }
 }
 
-const PERIOD_LABEL: Record<Rate['period'], string> = {
+const PERIOD_LABEL: Record<RatePeriod, string> = {
   hour: 'h',
   day: 'd',
   week: 'wk',
   month: 'mo',
   year: 'yr',
+}
+
+const PERIOD_DISPLAY: Record<RatePeriod, string> = {
+  hour: 'Hourly rate',
+  day: 'Daily rate',
+  week: 'Weekly rate',
+  month: 'Monthly salary',
+  year: 'Yearly salary',
+}
+
+const MODE_DISPLAY: Record<EngagementMode, string> = {
+  freelance: 'Freelance',
+  contractor: 'Payroll contractor',
+  employment: 'Permanent employment',
 }
 
 const STAGE_LABEL: Record<PipelineStage, string> = {
@@ -35,9 +58,9 @@ const STAGE_LABEL: Record<PipelineStage, string> = {
   not_proceeding: 'Not Proceeding',
 }
 
-export function formatRate(rate: Rate): string {
-  const symbol = CURRENCY_SYMBOL[rate.currency] ?? `${rate.currency} `
-  const amount = rate.amount.toLocaleString('en-US')
+export function formatRate(rate: CandidateRate): string {
+  const symbol = currencySymbol(rate.currency)
+  const amount = formatNumber(rate.amount)
   const period = PERIOD_LABEL[rate.period]
   return `${symbol}${amount}/${period}`
 }
@@ -52,4 +75,22 @@ export function daysAgoLabel(postedAt: string): string {
 
 export function stageLabel(stage: PipelineStage): string {
   return STAGE_LABEL[stage]
+}
+
+/** Formats a number with space as thousands separator: 15000 → "15 000", 150000 → "150 000" */
+export function formatNumber(n: number): string {
+  return Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0')
+}
+
+export function formatBudgetRange(budget: VacancyBudget): string {
+  const symbol = currencySymbol(budget.currency)
+  return `${formatNumber(budget.min)}–${formatNumber(budget.max)} ${symbol}`
+}
+
+export function budgetLabel(budget: VacancyBudget): { title: string; subtitle: string } {
+  return { title: MODE_DISPLAY[budget.mode], subtitle: PERIOD_DISPLAY[budget.period] }
+}
+
+export function rateModeLabel(mode: EngagementMode): string {
+  return MODE_DISPLAY[mode]
 }

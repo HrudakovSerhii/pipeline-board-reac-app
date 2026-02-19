@@ -3,6 +3,7 @@ import type { DragEndEvent, DragStartEvent } from '@dnd-kit/core'
 import { useState } from 'react'
 import type { Candidate, PipelineStage } from '../../../types/api.types'
 import { Stage } from '../../../utils/candidate'
+import { resolveDropStage } from '../board.utils'
 import { KanbanColumn } from '../KanbanColumn'
 import { CandidateCard } from '../../candidate/CandidateCard'
 
@@ -28,13 +29,13 @@ export function KanbanBoard({ candidates, onMoveCandidate }: KanbanBoardProps) {
   function handleDragEnd(event: DragEndEvent) {
     setActiveCandidate(null)
     const { active, over } = event
-    if (!over || active.id === over.id) return
+    if (!over) return
 
-    const newStage = over.id as PipelineStage
-    if (!STAGES.includes(newStage)) return
+    const draggedCandidate = candidates.find((c) => c.id === active.id)
+    if (!draggedCandidate) return
 
-    const candidate = candidates.find((c) => c.id === active.id)
-    if (!candidate || candidate.stage === newStage) return
+    const newStage = resolveDropStage(over.id, candidates, STAGES)
+    if (!newStage || draggedCandidate.stage === newStage) return
 
     onMoveCandidate(String(active.id), newStage)
   }

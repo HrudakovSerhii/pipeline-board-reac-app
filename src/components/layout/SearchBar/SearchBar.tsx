@@ -1,4 +1,5 @@
 import { cn } from '../../../utils/cn'
+import { FilterLineIcon, PlusIcon, SearchIcon } from '../../ui/icons'
 
 export interface SearchBarProps {
   query: string
@@ -7,32 +8,12 @@ export interface SearchBarProps {
   onToggleShortlisted: () => void
 }
 
-function FilterLineIcon() {
-  return (
-    <svg className="size-[14px] shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-      <path d="M2 4h12M4 8h8M6 12h4" />
-    </svg>
-  )
-}
-
-function SearchIcon() {
-  return (
-    <svg className="size-[14px] shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-      <circle cx="7" cy="7" r="4.5" />
-      <path d="M10.5 10.5L14 14" />
-    </svg>
-  )
-}
-
-function PlusIcon() {
-  return (
-    <svg className="size-[14px] shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-      <path d="M8 3v10M3 8h10" />
-    </svg>
-  )
-}
-
-export function SearchBar({ query, onQueryChange, showOnlyShortlisted, onToggleShortlisted }: SearchBarProps) {
+export function SearchBar({
+  query,
+  onQueryChange,
+  showOnlyShortlisted,
+  onToggleShortlisted,
+}: SearchBarProps) {
   return (
     <div className="flex items-center gap-[8px] px-[16px] py-[10px] border-b border-border">
       {/* Filter button — dummy */}

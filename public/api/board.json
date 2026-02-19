@@ -7,14 +7,51 @@
     "employmentType": "Freelance",
     "hoursPerWeek": 40,
     "location": "Berlin, Germany",
-    "workPeriod": { "startDate": "2026-03-01", "endDate": "2026-09-01" },
-    "publicationPeriod": { "startDate": "2026-01-15", "endDate": "2026-02-28" },
+    "workPeriod": {
+      "startDate": "2026-03-01",
+      "endDate": "2026-09-01"
+    },
+    "publicationPeriod": {
+      "startDate": "2026-01-15",
+      "endDate": "2026-02-28"
+    },
     "aiMatchesCount": 12,
-    "budgets": [{ "type": "freelance", "min": 50, "max": 80, "currency": "EUR" }],
+    "budgets": [
+      {
+        "mode": "freelance",
+        "period": "hour",
+        "min": 50,
+        "max": 80,
+        "currency": "EUR"
+      },
+      {
+        "mode": "contractor",
+        "period": "month",
+        "min": 12000,
+        "max": 15000,
+        "currency": "EUR"
+      },
+      {
+        "mode": "employment",
+        "period": "year",
+        "min": 120000,
+        "max": 150000,
+        "currency": "EUR"
+      }
+    ],
     "management": {
-      "hiringManager": { "name": "Klaus Weber" },
-      "createdBy": { "name": "Sarah Chen" },
-      "accountManager": { "name": "Marcus Webb", "email": "m.webb@glopros.com" },
+      "hiringManager": {
+        "name": "Klaus Weber",
+        "avatarUrl": "/images/photo-1.png"
+      },
+      "createdBy": {
+        "name": "Sarah Chen",
+        "avatarUrl": "/images/photo-2.png"
+      },
+      "accountManager": {
+        "name": "Marcus Webb",
+        "email": "m.webb@glopros.com"
+      },
       "workspace": "Private Workspace"
     }
   },
@@ -22,19 +59,42 @@
     {
       "id": "c01",
       "name": "Emma Schmidt",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior UX Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-20" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-20"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s5", "label": "Design Systems" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        }
       ],
       "postedAt": "2026-02-15T08:30:00Z",
-      "compensation": { "freelancer": { "amount": 80, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 80,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 83,
-      "stage": "applications",
+      "stage": "first_interview",
       "isShortlisted": true,
       "isGloPros": true,
       "aiMatchBreakdown": {
@@ -49,20 +109,46 @@
     {
       "id": "c02",
       "name": "James Wilson",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UI/UX Designer",
       "location": "Amsterdam, Netherlands",
-      "availability": { "status": "soon", "availableFrom": "2026-03-01" },
+      "availability": {
+        "status": "soon",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s6", "label": "Adobe XD" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2026-02-14T10:00:00Z",
-      "compensation": { "freelancer": { "amount": 70, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 70,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 76,
-      "stage": "applications",
+      "stage": "first_interview",
       "isShortlisted": false,
       "isGloPros": false,
       "aiMatchBreakdown": {
@@ -77,217 +163,559 @@
     {
       "id": "c03",
       "name": "Sofia Rossi",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Product Designer",
       "location": "Milan, Italy",
-      "availability": { "status": "soon", "availableFrom": "2026-03-15" },
+      "availability": {
+        "status": "soon",
+        "availableFrom": "2026-03-15"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s9", "label": "Sketch" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s9",
+          "label": "Sketch"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-02-13T14:20:00Z",
-      "compensation": {
-        "freelancer": { "amount": 65, "currency": "EUR", "period": "hour" },
-        "directEmployment": { "amount": 72000, "currency": "EUR", "period": "year" }
-      },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 65,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "mode": "employment",
+          "amount": 72000,
+          "currency": "EUR",
+          "period": "year"
+        }
+      ],
       "matchScore": 68,
-      "stage": "applications",
+      "stage": "under_review",
       "isShortlisted": false,
-      "isGloPros": true
+      "isGloPros": true,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c04",
       "name": "Andrei Popescu",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UX Designer",
       "location": "Bucharest, Romania",
-      "availability": { "status": "available", "availableFrom": "2026-02-18" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-18"
+      },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s4", "label": "Prototyping" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        }
       ],
       "postedAt": "2026-02-12T09:00:00Z",
-      "compensation": { "freelancer": { "amount": 55, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 55,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 61,
       "stage": "applications",
       "isShortlisted": false,
-      "isGloPros": false
+      "isGloPros": false,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c05",
       "name": "Yuki Tanaka",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Visual Designer",
       "location": "Tokyo, Japan",
-      "availability": { "status": "unavailable", "availableFrom": "2026-04-01" },
+      "availability": {
+        "status": "unavailable",
+        "availableFrom": "2026-04-01"
+      },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s10", "label": "Motion Design" },
-        { "id": "s1", "label": "Figma" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        }
       ],
       "postedAt": "2026-02-11T11:45:00Z",
-      "compensation": { "freelancer": { "amount": 60, "currency": "USD", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 60,
+          "currency": "USD",
+          "period": "hour"
+        }
+      ],
       "matchScore": 55,
       "stage": "applications",
       "isShortlisted": false,
-      "isGloPros": false
+      "isGloPros": false,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c06",
       "name": "Marco Ferretti",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Lead UX Designer",
       "location": "Munich, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-20" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-20"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s11", "label": "Accessibility" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2026-02-05T09:15:00Z",
-      "compensation": { "freelancer": { "amount": 85, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 85,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 88,
-      "stage": "under_review",
+      "stage": "first_interview",
       "isShortlisted": true,
-      "isGloPros": true
+      "isGloPros": true,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c07",
       "name": "Aisha Nkosi",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior Product Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-15" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-15"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s5", "label": "Design Systems" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        }
       ],
       "postedAt": "2026-02-04T13:00:00Z",
-      "compensation": { "freelancer": { "amount": 78, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 78,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 85,
-      "stage": "under_review",
+      "stage": "first_interview",
       "isShortlisted": true,
-      "isGloPros": true
+      "isGloPros": true,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c08",
       "name": "Lucas Müller",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UX/UI Designer",
       "location": "Hamburg, Germany",
-      "availability": { "status": "soon", "availableFrom": "2026-03-01" },
+      "availability": {
+        "status": "soon",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s6", "label": "Adobe XD" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s12", "label": "CSS/HTML" }
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        }
       ],
       "postedAt": "2026-02-03T10:30:00Z",
-      "compensation": {
-        "freelancer": { "amount": 72, "currency": "EUR", "period": "hour" },
-        "contractor": { "amount": 5800, "currency": "EUR", "period": "month" }
-      },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 72,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "mode": "contractor",
+          "amount": 5800,
+          "currency": "EUR",
+          "period": "month"
+        }
+      ],
       "matchScore": 79,
-      "stage": "under_review",
+      "stage": "first_interview",
       "isShortlisted": false,
-      "isGloPros": false
+      "isGloPros": false,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c09",
       "name": "Priya Sharma",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Interaction Designer",
       "location": "London, UK",
-      "availability": { "status": "available", "availableFrom": "2026-02-18" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-18"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-02-02T08:45:00Z",
-      "compensation": { "freelancer": { "amount": 75, "currency": "GBP", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 75,
+          "currency": "GBP",
+          "period": "hour"
+        }
+      ],
       "matchScore": 77,
-      "stage": "under_review",
+      "stage": "first_interview",
       "isShortlisted": false,
-      "isGloPros": false
+      "isGloPros": false,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c10",
       "name": "Oliver Chen",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UI Designer",
       "location": "Zurich, Switzerland",
-      "availability": { "status": "soon", "availableFrom": "2026-03-10" },
+      "availability": {
+        "status": "soon",
+        "availableFrom": "2026-03-10"
+      },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s9", "label": "Sketch" },
-        { "id": "s10", "label": "Motion Design" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s9",
+          "label": "Sketch"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        }
       ],
       "postedAt": "2026-01-30T11:00:00Z",
-      "compensation": { "freelancer": { "amount": 90, "currency": "CHF", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 90,
+          "currency": "CHF",
+          "period": "hour"
+        }
+      ],
       "matchScore": 72,
-      "stage": "under_review",
+      "stage": "first_interview",
       "isShortlisted": false,
-      "isGloPros": false
+      "isGloPros": false,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c11",
       "name": "Isabella Torres",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior UX Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-25" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-25"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-01-22T09:00:00Z",
-      "compensation": { "freelancer": { "amount": 82, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 82,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 91,
       "stage": "first_interview",
       "isShortlisted": true,
       "isGloPros": true,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      },
       "negotiationNote": "Negotiated 40 h/week for 30 days"
     },
     {
       "id": "c12",
       "name": "Henrik Lindqvist",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Product Designer",
       "location": "Stockholm, Sweden",
-      "availability": { "status": "available", "availableFrom": "2026-03-01" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s8", "label": "Wireframing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        }
       ],
       "postedAt": "2026-01-20T14:00:00Z",
-      "compensation": {
-        "freelancer": { "amount": 800, "currency": "SEK", "period": "hour" },
-        "directEmployment": { "amount": 720000, "currency": "SEK", "period": "year" }
-      },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 800,
+          "currency": "SEK",
+          "period": "hour"
+        },
+        {
+          "mode": "employment",
+          "amount": 720000,
+          "currency": "SEK",
+          "period": "year"
+        }
+      ],
       "matchScore": 87,
       "stage": "first_interview",
       "isShortlisted": true,
-      "isGloPros": false
+      "isGloPros": false,
+      "aiMatchBreakdown": {
+        "experience": 72,
+        "skills": 78,
+        "rate": 85,
+        "location": "2 km away",
+        "availability": "No match",
+        "industry": "Match"
+      }
     },
     {
       "id": "c13",
       "name": "Fatima Al-Hassan",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UX/UI Designer",
       "location": "Dubai, UAE",
-      "availability": { "status": "soon", "availableFrom": "2026-03-01" },
+      "availability": {
+        "status": "soon",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s6", "label": "Adobe XD" },
-        { "id": "s3", "label": "UX Research" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        }
       ],
       "postedAt": "2026-01-18T10:30:00Z",
-      "compensation": { "freelancer": { "amount": 68, "currency": "USD", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 68,
+          "currency": "USD",
+          "period": "hour"
+        }
+      ],
       "matchScore": 84,
       "stage": "first_interview",
       "isShortlisted": false,
@@ -296,18 +724,44 @@
     {
       "id": "c14",
       "name": "Thomas Becker",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior Product Designer",
       "location": "Frankfurt, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-18" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-18"
+      },
       "skills": [
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s12", "label": "CSS/HTML" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-01-16T08:00:00Z",
-      "compensation": { "freelancer": { "amount": 79, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 79,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 82,
       "stage": "first_interview",
       "isShortlisted": true,
@@ -316,20 +770,46 @@
     {
       "id": "c15",
       "name": "Mei Wang",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Visual Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-20" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-20"
+      },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s10", "label": "Motion Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s9", "label": "Sketch" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s9",
+          "label": "Sketch"
+        }
       ],
       "postedAt": "2026-01-14T12:00:00Z",
-      "compensation": {
-        "freelancer": { "amount": 70, "currency": "EUR", "period": "hour" },
-        "contractor": { "amount": 5500, "currency": "EUR", "period": "month" }
-      },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 70,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "mode": "contractor",
+          "amount": 5500,
+          "currency": "EUR",
+          "period": "month"
+        }
+      ],
       "matchScore": 80,
       "stage": "first_interview",
       "isShortlisted": false,
@@ -338,20 +818,48 @@
     {
       "id": "c16",
       "name": "Rafael Silva",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Lead Product Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-03-01" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-01-10T09:30:00Z",
-      "compensation": { "freelancer": { "amount": 85, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 85,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 93,
-      "stage": "contract_offer",
+      "stage": "hired",
+      "hiredAt": "2026-01-15T10:00:00Z",
+      "hiredBy": "Sarah Chen",
       "isShortlisted": true,
       "isGloPros": true,
       "negotiationNote": "Negotiated 35 h/week at EUR 72/h"
@@ -359,17 +867,40 @@
     {
       "id": "c17",
       "name": "Anna Kowalski",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior UX Designer",
       "location": "Warsaw, Poland",
-      "availability": { "status": "available", "availableFrom": "2026-03-01" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        }
       ],
       "postedAt": "2026-01-08T11:00:00Z",
-      "compensation": { "freelancer": { "amount": 68, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 68,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 90,
       "stage": "contract_offer",
       "isShortlisted": true,
@@ -379,17 +910,40 @@
     {
       "id": "c18",
       "name": "David Kim",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UI Designer",
       "location": "Amsterdam, Netherlands",
-      "availability": { "status": "available", "availableFrom": "2026-03-01" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s12", "label": "CSS/HTML" },
-        { "id": "s10", "label": "Motion Design" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        }
       ],
       "postedAt": "2026-01-07T08:00:00Z",
-      "compensation": { "freelancer": { "amount": 74, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 74,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 88,
       "stage": "contract_offer",
       "isShortlisted": false,
@@ -398,18 +952,44 @@
     {
       "id": "c19",
       "name": "Claudia Bauer",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior Product Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-03-15" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-03-15"
+      },
       "skills": [
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2026-01-06T13:00:00Z",
-      "compensation": { "freelancer": { "amount": 80, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 80,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 86,
       "stage": "contract_offer",
       "isShortlisted": true,
@@ -419,17 +999,40 @@
     {
       "id": "c20",
       "name": "Samuel Osei",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UX Designer",
       "location": "Cologne, Germany",
-      "availability": { "status": "soon", "availableFrom": "2026-03-05" },
+      "availability": {
+        "status": "soon",
+        "availableFrom": "2026-03-05"
+      },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s6", "label": "Adobe XD" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        }
       ],
       "postedAt": "2026-01-05T10:00:00Z",
-      "compensation": { "freelancer": { "amount": 66, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 66,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 83,
       "stage": "contract_offer",
       "isShortlisted": false,
@@ -438,17 +1041,40 @@
     {
       "id": "c21",
       "name": "Nina Johansson",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Lead UX Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "unavailable", "availableFrom": "2026-09-01" },
+      "availability": {
+        "status": "unavailable",
+        "availableFrom": "2026-09-01"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2025-12-10T09:00:00Z",
-      "compensation": { "freelancer": { "amount": 88, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 88,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 95,
       "stage": "hired",
       "isShortlisted": true,
@@ -459,17 +1085,40 @@
     {
       "id": "c22",
       "name": "Carlos Medina",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior Product Designer",
       "location": "Madrid, Spain",
-      "availability": { "status": "unavailable", "availableFrom": "2026-09-01" },
+      "availability": {
+        "status": "unavailable",
+        "availableFrom": "2026-09-01"
+      },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2025-12-08T14:00:00Z",
-      "compensation": { "freelancer": { "amount": 76, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 76,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 92,
       "stage": "hired",
       "isShortlisted": true,
@@ -480,18 +1129,44 @@
     {
       "id": "c23",
       "name": "Lena Fischer",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UX/UI Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "unavailable", "availableFrom": "2026-09-01" },
+      "availability": {
+        "status": "unavailable",
+        "availableFrom": "2026-09-01"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s12", "label": "CSS/HTML" },
-        { "id": "s5", "label": "Design Systems" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        }
       ],
       "postedAt": "2025-12-05T10:30:00Z",
-      "compensation": { "freelancer": { "amount": 82, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 82,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 89,
       "stage": "hired",
       "isShortlisted": true,
@@ -502,19 +1177,42 @@
     {
       "id": "c24",
       "name": "Ahmed Khalil",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Product Designer",
       "location": "Hamburg, Germany",
-      "availability": { "status": "unavailable", "availableFrom": "2026-09-01" },
+      "availability": {
+        "status": "unavailable",
+        "availableFrom": "2026-09-01"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s4", "label": "Prototyping" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        }
       ],
       "postedAt": "2025-12-03T08:00:00Z",
-      "compensation": {
-        "freelancer": { "amount": 72, "currency": "EUR", "period": "hour" },
-        "contractor": { "amount": 6000, "currency": "EUR", "period": "month" }
-      },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 72,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "mode": "contractor",
+          "amount": 6000,
+          "currency": "EUR",
+          "period": "month"
+        }
+      ],
       "matchScore": 85,
       "stage": "hired",
       "isShortlisted": false,
@@ -525,17 +1223,40 @@
     {
       "id": "c25",
       "name": "Julia Nowak",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Senior UX Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "unavailable", "availableFrom": "2026-09-01" },
+      "availability": {
+        "status": "unavailable",
+        "availableFrom": "2026-09-01"
+      },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2025-12-01T11:00:00Z",
-      "compensation": { "freelancer": { "amount": 78, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 78,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 87,
       "stage": "hired",
       "isShortlisted": true,
@@ -544,40 +1265,42 @@
       "hiredBy": "Sarah Chen"
     },
     {
-      "id": "c26",
-      "name": "Robert Johnson",
-      "role": "UI Designer",
-      "location": "Dublin, Ireland",
-      "availability": { "status": "available", "availableFrom": "2026-02-18" },
-      "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s9", "label": "Sketch" }
-      ],
-      "postedAt": "2026-01-08T09:00:00Z",
-      "compensation": { "freelancer": { "amount": 95, "currency": "EUR", "period": "hour" } },
-      "matchScore": 64,
-      "stage": "not_proceeding",
-      "isShortlisted": false,
-      "isGloPros": false,
-      "declinedAt": "2026-01-20T10:00:00Z",
-      "declinedBy": "Sarah Chen",
-      "declineReason": "Rate expectations too high"
-    },
-    {
       "id": "c27",
       "name": "Maria Garcia",
+      "avatarUrl": "/images/profile.image.png",
       "role": "UX Designer",
       "location": "Barcelona, Spain",
-      "availability": { "status": "available", "availableFrom": "2026-02-18" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-18"
+      },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s6", "label": "Adobe XD" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        }
       ],
       "postedAt": "2026-01-10T11:00:00Z",
-      "compensation": { "freelancer": { "amount": 62, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 62,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 58,
       "stage": "not_proceeding",
       "isShortlisted": false,
@@ -589,16 +1312,36 @@
     {
       "id": "c28",
       "name": "Kevin O'Brien",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Junior UX Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-18" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-18"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s2", "label": "UI Design" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        }
       ],
       "postedAt": "2026-01-09T08:30:00Z",
-      "compensation": { "freelancer": { "amount": 45, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 45,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 52,
       "stage": "not_proceeding",
       "isShortlisted": false,
@@ -610,17 +1353,40 @@
     {
       "id": "c29",
       "name": "Natalia Ivanova",
+      "avatarUrl": "/images/profile.image.png",
       "role": "Product Designer",
       "location": "Berlin, Germany",
-      "availability": { "status": "available", "availableFrom": "2026-02-18" },
+      "availability": {
+        "status": "available",
+        "availableFrom": "2026-02-18"
+      },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s2", "label": "UI Design" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        }
       ],
       "postedAt": "2026-01-11T13:00:00Z",
-      "compensation": { "freelancer": { "amount": 75, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 75,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 71,
       "stage": "not_proceeding",
       "isShortlisted": false,
@@ -634,15 +1400,38 @@
       "name": "Felix Braun",
       "role": "UX/UI Designer",
       "location": "Vienna, Austria",
-      "availability": { "status": "soon", "availableFrom": "2026-03-01" },
+      "avatarUrl": "/images/profile.image.png",
+      "availability": {
+        "status": "soon",
+        "availableFrom": "2026-03-01"
+      },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        }
       ],
       "postedAt": "2026-01-12T10:00:00Z",
-      "compensation": { "freelancer": { "amount": 69, "currency": "EUR", "period": "hour" } },
+      "compensation": [
+        {
+          "mode": "freelance",
+          "amount": 69,
+          "currency": "EUR",
+          "period": "hour"
+        }
+      ],
       "matchScore": 66,
       "stage": "not_proceeding",
       "isShortlisted": false,

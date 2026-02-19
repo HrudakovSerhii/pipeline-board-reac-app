@@ -1,0 +1,38 @@
+import type { ComponentType } from 'react'
+import {
+  GridIcon,
+  FileCheckIcon,
+  ChatIcon,
+  FolderIcon,
+  UsersIcon,
+  UserHexagonIcon,
+  DashboardIcon,
+  TableIcon,
+  FinanceIcon,
+  BankIcon,
+  CogIcon,
+  BriefcaseIcon,
+  ScaleIcon,
+  DollarIcon,
+  CopyIcon,
+} from './nav-icons'
+
+export const NAV_ICON_MAP: Record<string, ComponentType> = {
+  'vac-grid': GridIcon,
+  'vac-applications': FileCheckIcon,
+  'vac-messages': ChatIcon,
+  'vac-documents': FolderIcon,
+  'pro-candidates': UsersIcon,
+  'pro-profiles': UserHexagonIcon,
+  'adm-dashboard': DashboardIcon,
+  'adm-reports': TableIcon,
+  'adm-tables': GridIcon,
+  'adm-finance': FinanceIcon,
+  'fin-bank': BankIcon,
+  'fin-settings': CogIcon,
+  'rec-jobs': BriefcaseIcon,
+  'rec-team': UsersIcon,
+  'rec-legal': ScaleIcon,
+  'rec-salary': DollarIcon,
+  'rec-templates': CopyIcon,
+}
