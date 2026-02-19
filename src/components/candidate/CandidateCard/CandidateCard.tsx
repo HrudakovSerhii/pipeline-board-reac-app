@@ -74,7 +74,13 @@ export function CandidateCard({ candidate, stage }: CandidateCardProps) {
           </div>
           <div className="flex gap-[4px] justify-center items-center">
             <ScoreCircle score={candidate.matchScore} />
-            <button onClick={() => setIsAIBreakdownVisible(!isAIBreakdownVisible)}>
+            <button
+              type="button"
+              className="cursor-pointer"
+              aria-expanded={isAIBreakdownVisible}
+              aria-label="Toggle AI match breakdown"
+              onClick={() => setIsAIBreakdownVisible(!isAIBreakdownVisible)}
+            >
               <DownIcon />
             </button>
           </div>
