@@ -21,7 +21,7 @@ export function VacancyManagementPanel({ vacancy }: { vacancy: Vacancy }) {
   ]
 
   return (
-    <div className="flex flex-col gap-[12px] p-[24px] w-[320px] shrink-0 bg-brand-subtle rounded-br-[20px] rounded-tr-[20px] self-stretch border border-input-border border-l-0">
+    <div className="flex flex-col gap-[12px] p-[24px] min-w-[320px] shrink-0 bg-brand-subtle rounded-br-[20px] rounded-tr-[20px] self-stretch border border-input-border border-l-0">
       {/* Title + status */}
       <div className="flex items-center justify-between gap-[8px]">
         <span className="text-foreground text-[16px] font-medium">Vacancy management</span>
