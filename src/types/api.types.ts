@@ -129,6 +129,7 @@ export interface Vacancy {
   publicationPeriod: DateRange
   budgets: VacancyBudget[]
   management: VacancyManagement
+  aiMatches: number
 }
 
 // ─── API shapes ───────────────────────────────────────────────────────────────
