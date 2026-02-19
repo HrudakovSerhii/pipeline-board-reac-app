@@ -1,3 +1,5 @@
+import { NAV_ICON_MAP } from './nav-icon-map.ts'
+
 export {
   GloProIcon,
   LocationIcon,
@@ -19,4 +21,7 @@ export {
   FilterLineIcon,
   PersonIcon,
   VacancyIcon,
+  ChevronIcon,
 } from './icons'
+
+export { NAV_ICON_MAP }

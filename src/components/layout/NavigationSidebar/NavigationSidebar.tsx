@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { cn } from '../../../utils/cn'
-import { SidebarButton } from '../../ui/SidebarButton'
 import { NAV_SECTIONS } from './constants'
+
+import { SidebarButton } from '../../ui/SidebarButton'
 import { NavSectionBlock } from './NavSectionBlock'
-import { useOpenSections } from './useOpenSections'
-import { ArrowIcon, PlusIcon, SearchIcon, UserPlusIcon } from '../../ui/icons/nav-icons.tsx'
+import { useOpenSections } from '../../../hooks/useOpenSections.ts'
+
+import { ArrowIcon, PlusIcon, SearchIcon, UserPlusIcon } from '../../ui/icons/icons.tsx'
 
 export function NavigationSidebar() {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -15,15 +17,15 @@ export function NavigationSidebar() {
     <aside
       className={cn(
         'relative flex flex-col bg-white border-r border-divider h-full overflow-hidden transition-[width] duration-300 ease-in-out shrink-0',
-        isExpanded ? 'w-60' : 'w-[72px]',
+        isExpanded ? 'w-60' : 'w-18',
       )}
     >
       {/* Header */}
-      <div className="relative flex items-center justify-between px-6 py-4 border-b border-divider shrink-0 h-[57px]">
+      <div className="relative flex items-center justify-between px-6 py-4 border-b border-divider shrink-0 h-14.25">
         <div
           className={cn(
             'overflow-hidden transition-all duration-300',
-            isExpanded ? 'max-w-[120px] opacity-100' : 'max-w-0 opacity-0',
+            isExpanded ? 'max-w-30 opacity-100' : 'max-w-0 opacity-0',
           )}
         >
           <span className="text-brand-navy font-semibold text-sm whitespace-nowrap">GloPros</span>
@@ -46,7 +48,7 @@ export function NavigationSidebar() {
           icon={<SearchIcon />}
           label="Search..."
           isExpanded={isExpanded}
-          className="px-[27px] py-[19px] text-nav-text hover:bg-gray-50 w-full shrink-0"
+          className="px-6.75 py-4.75 text-nav-text hover:bg-gray-50 w-full shrink-0"
         />
 
         {/* Add new button */}
