@@ -133,9 +133,10 @@ export interface Vacancy {
 
 // ─── API shapes ───────────────────────────────────────────────────────────────
 
-/** GET /api/board */
-export interface BoardResponse {
+/** GET /api/candidates/:vacancyId */
+export interface CandidatesResponse {
   candidates: Candidate[]
+  totalCount: number
 }
 
 /** GET /api/vacancy/:id */
