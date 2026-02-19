@@ -17,11 +17,58 @@ nginx
  ├── GET  /api/board              → BoardResponse (vacancy + candidates)
  └── PATCH /api/candidates/:id   → UpdateCandidateRequest
 
-React app
- ├── src/api/          fetch functions + API → component prop mappers
- ├── src/types/
- │   └── api.types.ts  entity types, OpenAPI source of truth
- └── src/components/   board, columns, cards
+src/
+ ├── App.tsx                      ErrorBoundary root
+ ├── main.tsx
+ ├── index.css                    Tailwind v4 CSS-first design tokens
+ ├── assets/
+ │   └── icons.ts                 SVG path constants
+ ├── types/
+ │   └── api.types.ts             Entity types — OpenAPI source of truth
+ ├── api/
+ │   ├── api.constants.ts
+ │   ├── api.errors.ts            ApiError class
+ │   ├── board.api.ts             GET /api/board
+ │   └── candidates.api.ts        PATCH /api/candidates/:id
+ ├── hooks/
+ │   ├── useBoardState.ts         Fetch + optimistic stage move + localStorage
+ │   ├── useSearch.ts
+ │   └── useShortlistFilter.ts
+ ├── utils/
+ │   ├── candidate.ts             Candidate formatters
+ │   ├── cn.ts                    Class name utility
+ │   ├── localStorage.ts
+ │   └── string.ts
+ └── components/
+     ├── layout/
+     │   ├── layout.main.tsx      MainLayout — wires all hooks + panels
+     │   ├── NavigationSidebar/   Sidebar with collapsible nav sections
+     │   ├── VacancyCard/         3-panel card (info · rate · management)
+     │   ├── SearchBar/
+     │   └── ViewOptionsPanel/    Shortlist toggle + view controls
+     ├── board/
+     │   ├── KanbanBoard/         DnD context + column rendering + drag overlay
+     │   ├── KanbanColumn/        Droppable column + SortableCandidateCard wrapper
+     │   └── board.utils.ts       resolveDropStage + column helpers
+     ├── candidate/
+     │   ├── CandidateCard/       Full candidate card
+     │   ├── ProfileHeader/
+     │   ├── AvailabilityTags/
+     │   ├── SkillsRow/
+     │   ├── CompensationSummary/
+     │   ├── AiMatchBreakdown/    Score bars per category
+     │   ├── RecruiterBadge/
+     │   ├── HiredNotice/
+     │   └── DeclinedNotice/
+     └── ui/
+         ├── Avatar/
+         ├── PhotoAvatar/
+         ├── ColumnBadge/
+         ├── Pill/
+         ├── ScoreCircle/
+         ├── SkillChip/
+         ├── SidebarButton/
+         └── icons/               nav-icons · board-icons · search-icons · vacancy-icons
 ```
 
 Board state mutations (stage change, shortlist toggle) are written back through the API and persisted in the JSON file. `localStorage` mirrors the last known state for refresh resilience.
@@ -32,21 +79,19 @@ Board state mutations (stage change, shortlist toggle) are written back through 
 
 OpenAPI source of truth. No UI-only fields, no display-formatted strings.
 
-Primitives: `PipelineStage` · `AvailabilityStatus` · `VacancyStatus` · `EmploymentType` · `Currency` · `RatePeriod`
+Primitives: `PipelineStage` · `AvailabilityStatus` · `VacancyStatus` · `EmploymentType` · `Currency` · `RatePeriod` · `EngagementMode`
 
-Value types: `DateRange` · `Skill` · `Person` · `Rate`
+Value types: `DateRange` · `Skill` · `Person`
 
-Candidate compensation: `CandidateCompensation` · `CandidateAvailability`
+Candidate: `CandidateRate` · `CandidateAvailability`
 
-Vacancy budget: `FreelanceBudget` · `PayrollBudget` · `PermanentBudget` · `VacancyBudget`
+Vacancy budget: `VacancyBudget`
+
+AI scoring: `AiMatchBreakdown`
 
 Entities: `Candidate` · `Vacancy` · `VacancyManagement`
 
 API shapes: `BoardResponse` · `UpdateCandidateRequest`
-
-Card: `CardProps` · `ProfileInfo` · `AvailabilityInfo` · `MatchScore` · `Compensation`
-
-Info panel: `CandidateInfoProps` · `VacancyManagement` · `CompensationRate` · `FreelanceRate` · `PayrollContractorRate` · `PermanentEmploymentRate`
 
 ## Pipeline Columns
 
@@ -74,7 +119,6 @@ npm run coverage   # coverage report
 
 Core behavior covered by tests:
 
-- Search filter
-- Shortlist filter
-- Drag-and-drop state updates / column reducer logic
-- Column count accuracy
+- `CandidateCard` — renders skills, score, availability, stage-gated notices (hired/declined), recruiter badge, AI match breakdown visibility, compensation
+- `resolveDropStage` — drop on empty column, drop on card (same/different column), unknown id, all valid stage names
+- `formatNumber` / `formatBudgetRange` / `budgetLabel` — number formatting, budget range strings, label copy per mode + period
