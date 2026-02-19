@@ -7,12 +7,17 @@ import type { Connect, Plugin } from 'vite'
  * Reads and writes public/api/candidates.json so PATCH changes persist across refreshes.
  * Used for both `vite dev` and `vite preview` (prod build preview).
  */
-function createMockApiMiddleware(vacancyPath: string, candidatesPath: string): Connect.NextHandleFunction {
+function createMockApiMiddleware(
+  vacancyPath: string,
+  candidatesPath: string,
+): Connect.NextHandleFunction {
   return (req, res, next) => {
     // GET /api/vacancy/:id
     const vacancyMatch = req.url?.match(/^\/api\/vacancy\/(.+)$/)
     if (req.method === 'GET' && vacancyMatch) {
-      const db = JSON.parse(fs.readFileSync(vacancyPath, 'utf-8')) as { vacancy: Record<string, unknown> }
+      const db = JSON.parse(fs.readFileSync(vacancyPath, 'utf-8')) as {
+        vacancy: Record<string, unknown>
+      }
       if (db.vacancy['id'] !== vacancyMatch[1]) {
         res.setHeader('Content-Type', 'application/json')
         res.statusCode = 404
@@ -30,7 +35,9 @@ function createMockApiMiddleware(vacancyPath: string, candidatesPath: string): C
     // GET /api/candidates/:vacancyId — list candidates for a vacancy
     if (req.method === 'GET' && candidatesMatch) {
       const vacancyId = candidatesMatch[1]
-      const vacancy = JSON.parse(fs.readFileSync(vacancyPath, 'utf-8')) as { vacancy: Record<string, unknown> }
+      const vacancy = JSON.parse(fs.readFileSync(vacancyPath, 'utf-8')) as {
+        vacancy: Record<string, unknown>
+      }
       if (vacancy.vacancy['id'] !== vacancyId) {
         res.setHeader('Content-Type', 'application/json')
         res.statusCode = 404
@@ -75,8 +82,8 @@ function createMockApiMiddleware(vacancyPath: string, candidatesPath: string): C
 }
 
 export function mockApi(): Plugin {
-  const vacancyPath = path.resolve(__dirname, 'public/api/vacancy.json')
-  const candidatesPath = path.resolve(__dirname, 'public/api/candidates.json')
+  const vacancyPath = path.resolve(__dirname, '../public/api/vacancy.json')
+  const candidatesPath = path.resolve(__dirname, '../public/api/candidates.json')
   const middleware = createMockApiMiddleware(vacancyPath, candidatesPath)
 
   return {
