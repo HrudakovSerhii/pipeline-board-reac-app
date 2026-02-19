@@ -27,6 +27,7 @@ export {
   ClockIcon,
   DotsMenuIcon,
   SparklesIcon,
+  RecruiterSearchIcon,
   EditIcon,
   MailIcon,
 } from './vacancy-icons'

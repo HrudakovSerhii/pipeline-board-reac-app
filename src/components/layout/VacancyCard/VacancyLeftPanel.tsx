@@ -6,6 +6,7 @@ import {
   ClockIcon,
   DotsMenuIcon,
   SparklesIcon,
+  RecruiterSearchIcon,
 } from '../../ui/icons'
 
 function formatDateRange(start: string, end: string): string {
@@ -33,20 +34,7 @@ export function VacancyLeftPanel({ vacancy }: { vacancy: Vacancy }) {
             </span>
             {/* Recruiter search badge */}
             <div className="size-[24px] rounded-bl-[24px] rounded-br-[24px] rounded-tl-[24px] rounded-tr-[3px] bg-recruiter-badge flex items-center justify-center shrink-0 text-foreground">
-              <svg
-                className="size-[14px]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-                <circle cx="18.5" cy="18.5" r="2.5" />
-                <path d="M20.5 20.5L22 22" />
-              </svg>
+              <RecruiterSearchIcon />
             </div>
           </div>
         </div>

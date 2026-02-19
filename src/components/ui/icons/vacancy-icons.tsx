@@ -84,6 +84,25 @@ export function SparklesIcon() {
   )
 }
 
+export function RecruiterSearchIcon() {
+  return (
+    <svg
+      className="size-[14px]"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+      <circle cx="18.5" cy="18.5" r="2.5" />
+      <path d="M20.5 20.5L22 22" />
+    </svg>
+  )
+}
+
 export function EditIcon() {
   return (
     <svg className="size-[18px] shrink-0" fill="currentColor" viewBox="0 0 24 24">
