@@ -1,0 +1,58 @@
+{
+  "vacancy": {
+    "id": "CN00001",
+    "jobTitle": "UX/UI Designer",
+    "clientName": "TechCorp GmbH",
+    "status": "Public",
+    "preferredEmploymentType": "freelance",
+    "hoursPerWeek": 40,
+    "location": "Berlin, Germany",
+    "workPeriod": {
+      "startDate": "2026-03-01",
+      "endDate": "2026-09-01"
+    },
+    "publicationPeriod": {
+      "startDate": "2026-01-15",
+      "endDate": "2026-02-28"
+    },
+    "budgets": [
+      {
+        "period": "hour",
+        "type": "freelance",
+        "min": 50,
+        "max": 80,
+        "currency": "EUR"
+      },
+      {
+        "period": "month",
+        "type": "contract",
+        "min": 12000,
+        "max": 15000,
+        "currency": "EUR"
+      },
+      {
+        "period": "year",
+        "type": "full-time",
+        "min": 120000,
+        "max": 150000,
+        "currency": "EUR"
+      }
+    ],
+    "management": {
+      "hiringManager": {
+        "name": "Klaus Weber",
+        "avatarUrl": "/images/photo-1.png"
+      },
+      "createdBy": {
+        "name": "Sarah Chen",
+        "avatarUrl": "/images/photo-1.png"
+      },
+      "accountManager": {
+        "name": "Marcus Webb",
+        "email": "m.webb@glopros.com",
+        "avatarUrl": "/images/photo-2.png"
+      },
+      "workspace": "Private Workspace"
+    }
+  }
+}

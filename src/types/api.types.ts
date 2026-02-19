@@ -44,14 +44,15 @@ export interface Rate {
   period: RatePeriod
 }
 
-export type CandidateCompensation = {
-  [key in EmploymentType]: Rate | undefined
+export interface CandidateCompensation extends Rate {
+  type: EmploymentType
 }
 
 // ─── Vacancy budget ───────────────────────────────────────────────────────────
 
 export interface VacancyBudget {
   type: EmploymentType
+  period: RatePeriod
   min: number
   max: number
   currency: string
@@ -105,7 +106,7 @@ export interface Candidate {
   availability: CandidateAvailability
   skills: Skill[]
   postedAt: string // ISO 8601 datetime
-  compensation: CandidateCompensation
+  compensation: CandidateCompensation[]
   aiAnalise: {
     matchScore: number // 0–100,
     matchBreakdown?: AiMatchBreakdown
