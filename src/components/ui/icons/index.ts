@@ -9,4 +9,9 @@ export {
   EditIcon,
   MailIcon,
   CheckmarkIcon,
+  DownIcon,
+  CheckCircleIcon,
+  CandidateLocationIcon,
+  CandidateJobIcon,
+  CandidateClockIcon,
 } from './icons'

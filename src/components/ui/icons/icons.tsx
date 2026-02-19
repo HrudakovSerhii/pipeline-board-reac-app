@@ -1,13 +1,97 @@
+// - Board Card
+
+export function CheckCircleIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 16 16" aria-hidden="true">
+      <path
+        d="M5.77777 8.42222L6.78166 9.56952C7.06392 9.8921 7.57287 9.86833 7.82383 9.52085L10.2222 6.2"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        cx="8"
+        cy="8"
+        r="6"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function CandidateLocationIcon({ className = 'block size-full' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 16 16" aria-hidden="true">
+      <path
+        d="M11.7712 11.1046C11.1468 11.729 9.84104 13.0348 8.94253 13.9333C8.42183 14.454 7.57845 14.4543 7.05775 13.9336C6.17489 13.0507 4.89439 11.7702 4.22876 11.1046C2.14597 9.02177 2.14597 5.64489 4.22876 3.5621C6.31156 1.4793 9.68844 1.4793 11.7712 3.5621C13.854 5.64489 13.854 9.02177 11.7712 11.1046Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.33"
+      />
+      <path
+        d="M10 7.33333C10 8.4379 9.10457 9.33333 8 9.33333C6.89543 9.33333 6 8.4379 6 7.33333C6 6.22876 6.89543 5.33333 8 5.33333C9.10457 5.33333 10 6.22876 10 7.33333Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.33"
+      />
+    </svg>
+  )
+}
+
+export function CandidateJobIcon({ className = 'block size-full' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 16 16" aria-hidden="true">
+      <path
+        d="M14 8.83696C12.1471 9.58697 10.1218 9.99999 8 9.99999C5.8782 9.99999 3.85286 9.58698 2 8.83696M10.6667 4V2.66667C10.6667 1.93029 10.0697 1.33333 9.33333 1.33333H6.66667C5.93029 1.33333 5.33333 1.93029 5.33333 2.66667V4M8 8H8.00667M3.33333 13.3333H12.6667C13.403 13.3333 14 12.7364 14 12V5.33333C14 4.59695 13.403 4 12.6667 4H3.33333C2.59695 4 2 4.59695 2 5.33333V12C2 12.7364 2.59695 13.3333 3.33333 13.3333Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function CandidateClockIcon({ className = 'block size-full' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 16 16" aria-hidden="true">
+      <path
+        d="M13.6667 10.5339V5.46615C13.6664 5.24398 13.6081 5.02577 13.4976 4.83342C13.3871 4.64107 13.2283 4.48134 13.037 4.37026L8.62963 1.8364C8.4382 1.72521 8.22105 1.66667 8 1.66667C7.77895 1.66667 7.5618 1.72521 7.37037 1.8364L2.96296 4.37026C2.77172 4.48134 2.61288 4.64107 2.50236 4.83342C2.39185 5.02577 2.33356 5.24398 2.33333 5.46615V10.5339C2.33356 10.756 2.39185 10.9742 2.50236 11.1666C2.61288 11.3589 2.77172 11.5187 2.96296 11.6297L7.37037 14.1636C7.5618 14.2748 7.77895 14.3333 8 14.3333C8.22105 14.3333 8.4382 14.2748 8.62963 14.1636L13.037 11.6297C13.2283 11.5187 13.3871 11.3589 13.4976 11.1666C13.6081 10.9742 13.6664 10.756 13.6667 10.5339Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 4V8L10.6667 9.33333"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function DownIcon({ className = 'size-2 shrink-0' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 10 6" fill="none" aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0.292893 0.292893C0.683416 -0.097631 1.31658 -0.097631 1.7071 0.292893L4.99999 3.58579L8.29288 0.292893C8.6834 -0.0976311 9.31657 -0.0976311 9.70709 0.292893C10.0976 0.683417 10.0976 1.31658 9.70709 1.70711L5.7071 5.70711C5.31657 6.09763 4.68341 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976309 1.31658 -0.0976309 0.683417 0.292893 0.292893Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 // — Brand icons —
 
 export function GloProIcon({ className = 'size-4 shrink-0' }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      fill="none"
-      viewBox="0 0 12.5 16.1"
-      aria-hidden="true"
-    >
+    <svg className={className} fill="none" viewBox="0 0 12.5 16.1" aria-hidden="true">
       <path
         d="M10.7383 1.728C9.59086 0.598857 8.10971 0 6.45486 0H0V16.128H1.6C3.99086 16.128 5.93371 14.1851 5.93371 11.7943V11.4514C6.37257 11.584 6.86171 11.6571 7.392 11.6571C9.38971 11.6571 12.4023 10.1531 12.5029 6.016C12.544 4.38857 11.9314 2.90743 10.7383 1.728Z"
         className="fill-white"
