@@ -17,4 +17,6 @@ export {
   SearchIcon,
   PlusIcon,
   FilterLineIcon,
+  PersonIcon,
+  VacancyIcon,
 } from './icons'

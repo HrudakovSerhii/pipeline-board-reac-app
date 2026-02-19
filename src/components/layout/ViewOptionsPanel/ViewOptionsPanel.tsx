@@ -1,23 +1,28 @@
+import { PersonIcon, SearchIcon, VacancyIcon } from '../../ui/icons'
+
 export interface ViewOptionsPanelProps {
   candidateCount: number
 }
 
 export function ViewOptionsPanel({ candidateCount }: ViewOptionsPanelProps) {
   return (
-    <div className="flex items-center gap-[4px] px-[16px] py-[10px] border-b border-border">
+    <div className="flex items-center gap-1 px-4 py-2.5 border-b border-border">
       <button
         disabled
-        className="h-[32px] px-[14px] rounded-full text-2xs text-muted-foreground opacity-40 cursor-not-allowed"
+        className="h-8 px-3.5 rounded-full text-2xs text-muted-foreground opacity-40 cursor-not-allowed"
       >
+        <VacancyIcon />
         Vacancy overview
       </button>
       <button
         disabled
-        className="h-[32px] px-[14px] rounded-full text-2xs text-muted-foreground opacity-40 cursor-not-allowed"
+        className="h-8 px-3.5 rounded-full text-2xs text-muted-foreground opacity-40 cursor-not-allowed"
       >
+        <SearchIcon />
         AI search
       </button>
-      <button className="h-[32px] px-[14px] rounded-full text-2xs font-medium bg-brand text-white">
+      <button className="h-8 px-3.5 rounded-full text-2xs font-medium bg-brand text-white">
+        <PersonIcon />
         Candidates {candidateCount}
       </button>
     </div>
