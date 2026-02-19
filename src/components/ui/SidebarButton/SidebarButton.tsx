@@ -16,7 +16,6 @@ export function SidebarButton({ icon, label, isExpanded, className, onClick }: S
       title={!isExpanded ? label : undefined}
       className={cn(
         'flex items-center transition-colors',
-        // gap-0 when collapsed removes the phantom space between icon and hidden label
         isExpanded ? 'gap-2 justify-start' : 'gap-0 justify-center',
         className,
       )}
