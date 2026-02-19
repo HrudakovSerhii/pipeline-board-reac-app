@@ -1,6 +1,7 @@
-import type { PipelineStage } from '../../../types/api.types'
 import { stageLabel } from '../../../utils/candidate'
 import { cn } from '../../../utils/cn'
+
+import type { PipelineStage } from '../../../types/api.types'
 
 export interface ColumnBadgeProps {
   stage: PipelineStage
@@ -18,8 +19,8 @@ const STAGE_CLASS: Record<PipelineStage, string> = {
 
 export function ColumnBadge({ stage, value }: ColumnBadgeProps) {
   return (
-    <div className="inline-flex items-center text-brand-dark font-medium gap-[4px]">
-      <span className={cn('rounded-full w-[12px] h-[12px]  text-[14px]', STAGE_CLASS[stage])} />
+    <div className="inline-flex items-center text-brand-dark font-medium gap-1">
+      <span className={cn('rounded-full w-3 h-3 text-sm', STAGE_CLASS[stage])} />
       <span>
         {stageLabel(stage)} ({value.toString()})
       </span>
