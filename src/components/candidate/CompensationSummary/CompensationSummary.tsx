@@ -12,10 +12,8 @@ export function CompensationSummary({ compensation }: CompensationSummaryProps) 
     <div className="flex flex-wrap gap-[10px] items-center">
       {compensation.map((rate) => (
         <div key={rate.mode} className="flex flex-col text-[11px]">
-          <span className="text-[#6e6f7d]" >
-            {rateModeLabel(rate.mode)}
-          </span>
-          <span className="text-[#0d102b] font-bold">{formatRate(rate)}</span>
+          <span className="text-muted-foreground">{rateModeLabel(rate.mode)}</span>
+          <span className="text-secondary font-bold">{formatRate(rate)}</span>
         </div>
       ))}
     </div>

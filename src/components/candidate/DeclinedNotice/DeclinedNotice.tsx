@@ -12,9 +12,9 @@ export function DeclinedNotice({ reason, declinedBy, declinedAt }: DeclinedNotic
   })
 
   return (
-    <div className="w-full border-l-2 border-[#D32F2F] pl-[12px] py-[4px] flex flex-col gap-[2px]">
-      <span className="text-[11px] text-[#D32F2F]">{reason}</span>
-      <span className="text-[10px] text-[#0D102B]">
+    <div className="w-full border-l-2 border-declined pl-[12px] py-[4px] flex flex-col gap-[2px]">
+      <span className="text-[11px] text-declined">{reason}</span>
+      <span className="text-[10px] text-secondary">
         Sent by {declinedBy} · {date}
       </span>
     </div>

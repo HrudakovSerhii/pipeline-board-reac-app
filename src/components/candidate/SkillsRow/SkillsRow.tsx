@@ -11,10 +11,10 @@ export interface SkillsRowProps {
 
 function ClockIcon() {
   return (
-    <div className="shrink-0 size-[14px]">
+    <div className="shrink-0 size-[14px] text-muted-foreground">
       <svg className="block size-full" fill="none" viewBox="0 0 16 16">
-        <path d={icons.p1cbd8200} stroke="#6E6F7D" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 4V8L10.6667 9.33333" stroke="#6E6F7D" strokeLinecap="round" strokeLinejoin="round" />
+        <path d={icons.p1cbd8200} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 4V8L10.6667 9.33333" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   )
@@ -35,7 +35,7 @@ export function SkillsRow({ skills, visibleCount, postedAt }: SkillsRowProps) {
 
       <div className="flex items-center gap-[4px] shrink-0">
         <ClockIcon />
-        <span className="text-[11px] text-[#0d102b] whitespace-nowrap">{daysAgoLabel(postedAt)}</span>
+        <span className="text-[11px] text-secondary whitespace-nowrap">{daysAgoLabel(postedAt)}</span>
       </div>
     </div>
   )
