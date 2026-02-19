@@ -108,10 +108,7 @@ function LeftPanel({ vacancy }: { vacancy: Vacancy }) {
 
       {/* AI matches button */}
       <div className="mt-auto pt-[4px]">
-        <button
-          className="flex items-center gap-[6px] h-[36px] px-[16px] rounded-full text-white text-sm font-medium"
-          style={{ backgroundImage: 'linear-gradient(90deg, #0a2246 0%, #0654c7 100%)' }}
-        >
+        <button className="flex items-center gap-[6px] h-[36px] px-[16px] rounded-full text-white text-sm font-medium bg-linear-to-r from-ai-gradient-from to-ai-gradient-to">
           <SparklesIcon />
           AI-matches ({vacancy.aiMatchesCount})
         </button>
