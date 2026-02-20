@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { DndContext, DragOverlay, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
 
 import { Stage } from '../../../utils/candidate'
@@ -18,6 +18,14 @@ const STAGES = Object.values(Stage) as PipelineStage[]
 
 export function KanbanBoard({ candidates, onMoveCandidate }: KanbanBoardProps) {
   const [activeCandidate, setActiveCandidate] = useState<Candidate | null>(null)
+
+  const columnCandidates = useMemo(() => {
+    const map = new Map<PipelineStage, Candidate[]>(STAGES.map((s) => [s, []]))
+    for (const c of candidates) {
+      map.get(c.process.stage)?.push(c)
+    }
+    return map
+  }, [candidates])
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 8 } }))
 
@@ -47,7 +55,7 @@ export function KanbanBoard({ candidates, onMoveCandidate }: KanbanBoardProps) {
           <KanbanColumn
             key={stage}
             stage={stage}
-            candidates={candidates.filter((c) => c.process.stage === stage)}
+            candidates={columnCandidates.get(stage)!}
           />
         ))}
         <div className="shrink-0 w-2" />
