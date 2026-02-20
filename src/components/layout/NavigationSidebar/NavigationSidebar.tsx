@@ -36,7 +36,7 @@ export function NavigationSidebar() {
           aria-label={isExpanded ? 'Collapse sidebar' : 'Expand sidebar'}
         >
           <ArrowIcon
-            className={cn('size-6 transition-transform duration-300', !isExpanded && 'rotate-180')}
+            className={cn('size-6 transition-transform duration-300', isExpanded && 'rotate-180')}
           />
         </button>
       </div>
