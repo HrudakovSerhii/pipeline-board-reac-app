@@ -11,14 +11,31 @@
         "availableFrom": "2026-02-20"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s5", "label": "Design Systems" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        }
       ],
       "postedAt": "2026-02-15T08:30:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 80, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 80,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 83,
@@ -48,15 +65,35 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s6", "label": "Adobe XD" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2026-02-14T10:00:00Z",
       "compensation": [
-        { "type": "full-time", "amount": 70000, "currency": "EUR", "period": "year" }
+        {
+          "type": "full-time",
+          "amount": 70000,
+          "currency": "EUR",
+          "period": "year"
+        }
       ],
       "aiAnalise": {
         "matchScore": 76,
@@ -86,15 +123,37 @@
         "availableFrom": "2026-03-15"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s9", "label": "Sketch" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s9",
+          "label": "Sketch"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-02-13T14:20:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 65, "currency": "EUR", "period": "hour" },
-        { "type": "full-time", "amount": 72000, "currency": "EUR", "period": "year" }
+        {
+          "type": "freelance",
+          "amount": 65,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "type": "full-time",
+          "amount": 72000,
+          "currency": "EUR",
+          "period": "year"
+        }
       ],
       "aiAnalise": {
         "matchScore": 68,
@@ -111,7 +170,8 @@
         "stage": "under_review"
       },
       "isShortlisted": false,
-      "isGloPros": true
+      "isGloPros": true,
+      "stage": "applications"
     },
     {
       "id": "c04",
@@ -124,13 +184,27 @@
         "availableFrom": "2026-02-18"
       },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s4", "label": "Prototyping" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        }
       ],
       "postedAt": "2026-02-12T09:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 55, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 55,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 61,
@@ -147,7 +221,8 @@
         "stage": "applications"
       },
       "isShortlisted": false,
-      "isGloPros": false
+      "isGloPros": false,
+      "stage": "under_review"
     },
     {
       "id": "c05",
@@ -160,13 +235,27 @@
         "availableFrom": "2026-04-01"
       },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s10", "label": "Motion Design" },
-        { "id": "s1", "label": "Figma" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        }
       ],
       "postedAt": "2026-02-11T11:45:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 60, "currency": "USD", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 60,
+          "currency": "USD",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 55,
@@ -183,7 +272,8 @@
         "stage": "applications"
       },
       "isShortlisted": false,
-      "isGloPros": false
+      "isGloPros": false,
+      "stage": "under_review"
     },
     {
       "id": "c06",
@@ -196,15 +286,35 @@
         "availableFrom": "2026-02-20"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s11", "label": "Accessibility" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2026-02-05T09:15:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 85, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 85,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 88,
@@ -234,14 +344,31 @@
         "availableFrom": "2026-02-15"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s5", "label": "Design Systems" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        }
       ],
       "postedAt": "2026-02-04T13:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 78, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 78,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 85,
@@ -271,15 +398,37 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s6", "label": "Adobe XD" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s12", "label": "CSS/HTML" }
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        }
       ],
       "postedAt": "2026-02-03T10:30:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 72, "currency": "EUR", "period": "hour" },
-        { "type": "contract", "amount": 5800, "currency": "EUR", "period": "month" }
+        {
+          "type": "freelance",
+          "amount": 72,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "type": "contract",
+          "amount": 5800,
+          "currency": "EUR",
+          "period": "month"
+        }
       ],
       "aiAnalise": {
         "matchScore": 79,
@@ -309,14 +458,31 @@
         "availableFrom": "2026-02-18"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-02-02T08:45:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 75, "currency": "GBP", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 75,
+          "currency": "GBP",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 77,
@@ -346,14 +512,31 @@
         "availableFrom": "2026-03-10"
       },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s9", "label": "Sketch" },
-        { "id": "s10", "label": "Motion Design" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s9",
+          "label": "Sketch"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        }
       ],
       "postedAt": "2026-01-30T11:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 90, "currency": "CHF", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 90,
+          "currency": "CHF",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 72,
@@ -383,15 +566,35 @@
         "availableFrom": "2026-02-25"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-01-22T09:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 82, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 82,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 91,
@@ -422,15 +625,37 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s8", "label": "Wireframing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        }
       ],
       "postedAt": "2026-01-20T14:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 800, "currency": "SEK", "period": "hour" },
-        { "type": "full-time", "amount": 720000, "currency": "SEK", "period": "year" }
+        {
+          "type": "freelance",
+          "amount": 800,
+          "currency": "SEK",
+          "period": "hour"
+        },
+        {
+          "type": "full-time",
+          "amount": 720000,
+          "currency": "SEK",
+          "period": "year"
+        }
       ],
       "aiAnalise": {
         "matchScore": 87,
@@ -460,14 +685,31 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s6", "label": "Adobe XD" },
-        { "id": "s3", "label": "UX Research" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        }
       ],
       "postedAt": "2026-01-18T10:30:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 68, "currency": "USD", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 68,
+          "currency": "USD",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 84
@@ -489,15 +731,35 @@
         "availableFrom": "2026-02-18"
       },
       "skills": [
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s12", "label": "CSS/HTML" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-01-16T08:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 79, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 79,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 82
@@ -519,15 +781,37 @@
         "availableFrom": "2026-02-20"
       },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s10", "label": "Motion Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s9", "label": "Sketch" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s9",
+          "label": "Sketch"
+        }
       ],
       "postedAt": "2026-01-14T12:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 70, "currency": "EUR", "period": "hour" },
-        { "type": "contract", "amount": 5500, "currency": "EUR", "period": "month" }
+        {
+          "type": "freelance",
+          "amount": 70,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "type": "contract",
+          "amount": 5500,
+          "currency": "EUR",
+          "period": "month"
+        }
       ],
       "aiAnalise": {
         "matchScore": 80
@@ -549,15 +833,35 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2026-01-10T09:30:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 85, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 85,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 93
@@ -582,14 +886,31 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        }
       ],
       "postedAt": "2026-01-08T11:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 68, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 68,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 90
@@ -612,14 +933,31 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s12", "label": "CSS/HTML" },
-        { "id": "s10", "label": "Motion Design" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        },
+        {
+          "id": "s10",
+          "label": "Motion Design"
+        }
       ],
       "postedAt": "2026-01-07T08:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 74, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 74,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 88
@@ -641,15 +979,35 @@
         "availableFrom": "2026-03-15"
       },
       "skills": [
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2026-01-06T13:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 80, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 80,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 86
@@ -672,14 +1030,31 @@
         "availableFrom": "2026-03-05"
       },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s6", "label": "Adobe XD" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        }
       ],
       "postedAt": "2026-01-05T10:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 66, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 66,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 83
@@ -701,14 +1076,31 @@
         "availableFrom": "2026-09-01"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s7", "label": "User Testing" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        }
       ],
       "postedAt": "2025-12-10T09:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 88, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 88,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 95
@@ -732,14 +1124,31 @@
         "availableFrom": "2026-09-01"
       },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2025-12-08T14:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 76, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 76,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 92
@@ -763,15 +1172,35 @@
         "availableFrom": "2026-09-01"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s12", "label": "CSS/HTML" },
-        { "id": "s5", "label": "Design Systems" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s12",
+          "label": "CSS/HTML"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        }
       ],
       "postedAt": "2025-12-05T10:30:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 82, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 82,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 89
@@ -795,14 +1224,33 @@
         "availableFrom": "2026-09-01"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s4", "label": "Prototyping" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        }
       ],
       "postedAt": "2025-12-03T08:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 72, "currency": "EUR", "period": "hour" },
-        { "type": "contract", "amount": 6000, "currency": "EUR", "period": "month" }
+        {
+          "type": "freelance",
+          "amount": 72,
+          "currency": "EUR",
+          "period": "hour"
+        },
+        {
+          "type": "contract",
+          "amount": 6000,
+          "currency": "EUR",
+          "period": "month"
+        }
       ],
       "aiAnalise": {
         "matchScore": 85
@@ -826,14 +1274,31 @@
         "availableFrom": "2026-09-01"
       },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s11", "label": "Accessibility" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s11",
+          "label": "Accessibility"
+        }
       ],
       "postedAt": "2025-12-01T11:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 78, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 78,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 87
@@ -857,14 +1322,31 @@
         "availableFrom": "2026-02-18"
       },
       "skills": [
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s7", "label": "User Testing" },
-        { "id": "s6", "label": "Adobe XD" }
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s7",
+          "label": "User Testing"
+        },
+        {
+          "id": "s6",
+          "label": "Adobe XD"
+        }
       ],
       "postedAt": "2026-01-10T11:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 62, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 62,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 58
@@ -889,13 +1371,27 @@
         "availableFrom": "2026-02-18"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" },
-        { "id": "s2", "label": "UI Design" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        }
       ],
       "postedAt": "2026-01-09T08:30:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 45, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 45,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 52
@@ -920,14 +1416,31 @@
         "availableFrom": "2026-02-18"
       },
       "skills": [
-        { "id": "s1", "label": "Figma" },
-        { "id": "s4", "label": "Prototyping" },
-        { "id": "s5", "label": "Design Systems" },
-        { "id": "s2", "label": "UI Design" }
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s4",
+          "label": "Prototyping"
+        },
+        {
+          "id": "s5",
+          "label": "Design Systems"
+        },
+        {
+          "id": "s2",
+          "label": "UI Design"
+        }
       ],
       "postedAt": "2026-01-11T13:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 75, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 75,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 71
@@ -952,14 +1465,31 @@
         "availableFrom": "2026-03-01"
       },
       "skills": [
-        { "id": "s2", "label": "UI Design" },
-        { "id": "s3", "label": "UX Research" },
-        { "id": "s1", "label": "Figma" },
-        { "id": "s8", "label": "Wireframing" }
+        {
+          "id": "s2",
+          "label": "UI Design"
+        },
+        {
+          "id": "s3",
+          "label": "UX Research"
+        },
+        {
+          "id": "s1",
+          "label": "Figma"
+        },
+        {
+          "id": "s8",
+          "label": "Wireframing"
+        }
       ],
       "postedAt": "2026-01-12T10:00:00Z",
       "compensation": [
-        { "type": "freelance", "amount": 69, "currency": "EUR", "period": "hour" }
+        {
+          "type": "freelance",
+          "amount": 69,
+          "currency": "EUR",
+          "period": "hour"
+        }
       ],
       "aiAnalise": {
         "matchScore": 66
