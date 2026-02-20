@@ -9,7 +9,7 @@ export function ScoreCircle({ score }: ScoreCircleProps) {
   const dash = (score / 100) * circumference
 
   return (
-    <div className="relative size-[36px] shrink-0">
+    <div className="relative size-9 shrink-0">
       <svg className="block size-full" fill="none" viewBox="0 0 46 46">
         <circle cx="23" cy="23" r={radius} fill="white" className="stroke-border" strokeWidth="4" />
         <circle

@@ -15,5 +15,5 @@ export function resolveDropStage(
   if (stages.includes(overId as PipelineStage)) {
     return overId as PipelineStage
   }
-  return candidates.find((c) => c.id === overId)?.stage ?? null
+  return candidates.find((c) => c.id === overId)?.process.stage ?? null
 }
