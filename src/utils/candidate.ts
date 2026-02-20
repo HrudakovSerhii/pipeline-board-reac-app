@@ -98,7 +98,7 @@ export function formatCandidateRate(rate: CandidateRate): string {
 
 export function formatBudgetRange(budget: VacancyBudget): string {
   const symbol = currencySymbol(budget.currency)
-  return `${formatNumber(budget.min)}-${formatNumber(budget.max)} ${symbol}`
+  return `${formatNumber(budget.min)}–${formatNumber(budget.max)} ${symbol}`
 }
 
 export function budgetLabel(budget: VacancyBudget): { title: string; subtitle: string } {
