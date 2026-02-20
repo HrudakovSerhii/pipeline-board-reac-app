@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { getLocalStorage, setLocalStorage } from '../../../utils/localStorage'
-import { NAV_SECTIONS } from './constants'
+import { getLocalStorage, setLocalStorage } from '../utils/localStorage.ts'
+import { NAV_SECTIONS } from '../components/layout/NavigationSidebar/constants.ts'
 
 const STORAGE_KEY = 'nav-open-sections'
 

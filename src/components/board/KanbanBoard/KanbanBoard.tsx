@@ -1,11 +1,13 @@
+import { useMemo, useState } from 'react'
 import { DndContext, DragOverlay, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
-import type { DragEndEvent, DragStartEvent } from '@dnd-kit/core'
-import { useState } from 'react'
-import type { Candidate, PipelineStage } from '../../../types/api.types'
+
 import { Stage } from '../../../utils/candidate'
 import { resolveDropStage } from '../board.utils'
 import { KanbanColumn } from '../KanbanColumn'
 import { CandidateCard } from '../../candidate/CandidateCard'
+
+import type { DragEndEvent, DragStartEvent } from '@dnd-kit/core'
+import type { Candidate, PipelineStage } from '../../../types/api.types'
 
 export interface KanbanBoardProps {
   candidates: Candidate[]
@@ -17,9 +19,15 @@ const STAGES = Object.values(Stage) as PipelineStage[]
 export function KanbanBoard({ candidates, onMoveCandidate }: KanbanBoardProps) {
   const [activeCandidate, setActiveCandidate] = useState<Candidate | null>(null)
 
-  const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
-  )
+  const columnCandidates = useMemo(() => {
+    const map = new Map<PipelineStage, Candidate[]>(STAGES.map((s) => [s, []]))
+    for (const c of candidates) {
+      map.get(c.process.stage)?.push(c)
+    }
+    return map
+  }, [candidates])
+
+  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 8 } }))
 
   function handleDragStart(event: DragStartEvent) {
     const candidate = candidates.find((c) => c.id === event.active.id)
@@ -35,28 +43,28 @@ export function KanbanBoard({ candidates, onMoveCandidate }: KanbanBoardProps) {
     if (!draggedCandidate) return
 
     const newStage = resolveDropStage(over.id, candidates, STAGES)
-    if (!newStage || draggedCandidate.stage === newStage) return
+    if (!newStage || draggedCandidate.process.stage === newStage) return
 
     onMoveCandidate(String(active.id), newStage)
   }
 
   return (
     <DndContext sensors={sensors} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-      <div className="flex gap-[var(--kanban-col-gap)] px-[16px] pt-[8px] overflow-x-auto h-full">
+      <div className="flex gap-(--kanban-col-gap) px-4 pt-2 overflow-x-auto h-full">
         {STAGES.map((stage) => (
           <KanbanColumn
             key={stage}
             stage={stage}
-            candidates={candidates.filter((c) => c.stage === stage)}
+            candidates={columnCandidates.get(stage)!}
           />
         ))}
-        <div className="shrink-0 w-[8px]" />
+        <div className="shrink-0 w-2" />
       </div>
 
       <DragOverlay>
         {activeCandidate && (
-          <div className="w-[var(--kanban-col-w)] rotate-2 opacity-95 shadow-lg">
-            <CandidateCard candidate={activeCandidate} stage={activeCandidate.stage} />
+          <div className="w-(--kanban-col-w) rotate-2 opacity-95 shadow-lg">
+            <CandidateCard candidate={activeCandidate} stage={activeCandidate.process.stage} />
           </div>
         )}
       </DragOverlay>

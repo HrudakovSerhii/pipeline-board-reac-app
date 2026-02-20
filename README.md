@@ -1,21 +1,22 @@
 # Pipeline Board App
 
-Headless React kanban board for tracking candidates through a hiring pipeline. Data is driven by a local JSON file served via an nginx REST API — no application backend required.
+Headless React kanban board for tracking candidates through a hiring pipeline. Data is driven by local JSON files served via a Vite mock API middleware — no application backend required.
 
 ## Stack
 
 - React 19 + TypeScript + Vite
 - Tailwind CSS
-- nginx (static file server + JSON REST API)
+- Vite mock API middleware (dev + preview)
 - Prettier + ESLint (code style)
 - Vitest + React Testing Library (unit + component tests)
 
 ## Architecture
 
 ```
-nginx
- ├── GET  /api/board              → BoardResponse (vacancy + candidates)
- └── PATCH /api/candidates/:id   → UpdateCandidateRequest
+Vite dev/preview server  (middleware/api.middleware.ts)
+ ├── GET  /api/vacancy/:id           → VacancyResponse
+ ├── GET  /api/candidates/:vacancyId → CandidatesResponse
+ └── PATCH /api/candidates/:id       → UpdateCandidateRequest
 
 src/
  ├── App.tsx                      ErrorBoundary root
@@ -28,20 +29,24 @@ src/
  ├── api/
  │   ├── api.constants.ts
  │   ├── api.errors.ts            ApiError class
- │   ├── board.api.ts             GET /api/board
- │   └── candidates.api.ts        PATCH /api/candidates/:id
+ │   ├── vacancy.api.ts           GET /api/vacancy/:id
+ │   └── candidates.api.ts        GET + PATCH /api/candidates/:id
  ├── hooks/
- │   ├── useBoardState.ts         Fetch + optimistic stage move + localStorage
+ │   ├── useCandidates.ts         Fetch candidates by vacancy ID + optimistic stage move + localStorage
+ │   ├── useVacancy.ts            Fetch vacancy by ID
+ │   ├── useOpenSections.ts
  │   ├── useSearch.ts
  │   └── useShortlistFilter.ts
  ├── utils/
  │   ├── candidate.ts             Candidate formatters
  │   ├── cn.ts                    Class name utility
- │   ├── localStorage.ts
- │   └── string.ts
+ │   ├── date.ts
+ │   ├── string.ts
+ │   └── localStorage.ts
  └── components/
      ├── layout/
      │   ├── layout.main.tsx      MainLayout — wires all hooks + panels
+     │   ├── BoardView/
      │   ├── NavigationSidebar/   Sidebar with collapsible nav sections
      │   ├── VacancyCard/         3-panel card (info · rate · management)
      │   ├── SearchBar/
@@ -52,14 +57,14 @@ src/
      │   └── board.utils.ts       resolveDropStage + column helpers
      ├── candidate/
      │   ├── CandidateCard/       Full candidate card
-     │   ├── ProfileHeader/
-     │   ├── AvailabilityTags/
-     │   ├── SkillsRow/
-     │   ├── CompensationSummary/
-     │   ├── AiMatchBreakdown/    Score bars per category
-     │   ├── RecruiterBadge/
-     │   ├── HiredNotice/
-     │   └── DeclinedNotice/
+     │   ├── ProfileHeader.tsx
+     │   ├── AvailabilityTags.tsx
+     │   ├── SkillsRow.tsx
+     │   ├── CompensationSummary.tsx
+     │   ├── AiMatchBreakdown.tsx Score bars per category
+     │   ├── RecruiterBadge.tsx
+     │   ├── HiredNotice.tsx
+     │   └── DeclinedNotice.tsx
      └── ui/
          ├── Avatar/
          ├── PhotoAvatar/
@@ -79,11 +84,11 @@ Board state mutations (stage change, shortlist toggle) are written back through 
 
 OpenAPI source of truth. No UI-only fields, no display-formatted strings.
 
-Primitives: `PipelineStage` · `AvailabilityStatus` · `VacancyStatus` · `EmploymentType` · `Currency` · `RatePeriod` · `EngagementMode`
+Primitives: `PipelineStage` · `AvailabilityStatus` · `VacancyStatus` · `EmploymentType` · `Currency` · `RatePeriod`
 
-Value types: `DateRange` · `Skill` · `Person`
+Value types: `DateRange` · `Skill` · `Person` · `Rate`
 
-Candidate: `CandidateRate` · `CandidateAvailability`
+Candidate: `CandidateRate` · `CandidateAvailability` · `CandidateProcess`
 
 Vacancy budget: `VacancyBudget`
 
@@ -91,7 +96,7 @@ AI scoring: `AiMatchBreakdown`
 
 Entities: `Candidate` · `Vacancy` · `VacancyManagement`
 
-API shapes: `BoardResponse` · `UpdateCandidateRequest`
+API shapes: `VacancyResponse` · `CandidatesResponse` · `UpdateCandidateRequest`
 
 ## Pipeline Columns
 

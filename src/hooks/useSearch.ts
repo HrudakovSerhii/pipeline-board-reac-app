@@ -1,5 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { Candidate } from '../types/api.types'
+
+const DEBOUNCE_MS = 150
 
 interface SearchState {
   query: string
@@ -8,10 +10,16 @@ interface SearchState {
 }
 
 export function useSearch(candidates: Candidate[]): SearchState {
-  const [query, setQuery] = useState('')
+  const [inputValue, setInputValue] = useState('')
+  const [debouncedQuery, setDebouncedQuery] = useState('')
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedQuery(inputValue), DEBOUNCE_MS)
+    return () => clearTimeout(timer)
+  }, [inputValue])
 
   const filtered = useMemo(() => {
-    const term = query.trim().toLowerCase()
+    const term = debouncedQuery.trim().toLowerCase()
     if (!term) return candidates
     return candidates.filter(
       (c) =>
@@ -19,7 +27,7 @@ export function useSearch(candidates: Candidate[]): SearchState {
         c.role.toLowerCase().includes(term) ||
         c.location.toLowerCase().includes(term),
     )
-  }, [candidates, query])
+  }, [candidates, debouncedQuery])
 
-  return { query, setQuery, filtered }
+  return { query: inputValue, setQuery: setInputValue, filtered }
 }
