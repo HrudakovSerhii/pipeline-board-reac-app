@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { Candidate, PipelineStage } from '../types/api.types'
 
 import { getCandidates, updateCandidate } from '../api/candidates.api'
@@ -63,9 +63,15 @@ export function useCandidates(vacancyId: string | null): CandidatesState {
     }
   }, [vacancyId])
 
+  const moveControllersRef = useRef<Map<string, AbortController>>(new Map())
+
   const moveCandidate = useCallback(
     (id: string, stage: PipelineStage) => {
       if (settled?.result !== 'success' || settled.id !== vacancyId || !vacancyId) return
+
+      moveControllersRef.current.get(id)?.abort()
+      const controller = new AbortController()
+      moveControllersRef.current.set(id, controller)
 
       const snapshot = settled
       const updated = settled.candidates.map((c) =>
@@ -74,13 +80,15 @@ export function useCandidates(vacancyId: string | null): CandidatesState {
 
       setSettled({ ...settled, candidates: updated })
 
-      updateCandidate(id, { stage })
+      updateCandidate(id, { stage }, controller.signal)
         .then(() => {
+          moveControllersRef.current.delete(id)
           setLocalStorage(STORAGE_KEY + vacancyId, updated)
         })
         .catch((err: unknown) => {
+          moveControllersRef.current.delete(id)
+          if (err instanceof Error && err.name === 'AbortError') return
           setSettled(snapshot)
-          // surface move error without overwriting fetch error state
           console.error('Failed to persist stage change', err)
         })
     },

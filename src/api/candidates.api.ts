@@ -18,11 +18,16 @@ export async function getCandidates(
   return response.json() as Promise<CandidatesResponse>
 }
 
-export async function updateCandidate(id: string, req: UpdateCandidateRequest): Promise<Candidate> {
+export async function updateCandidate(
+  id: string,
+  req: UpdateCandidateRequest,
+  signal: AbortSignal,
+): Promise<Candidate> {
   const response = await fetch(`${API_BASE_URL}${CANDIDATE_PATHS.update(id)}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(req),
+    signal,
   })
   if (!response.ok) {
     throw new ApiError(response.status, response)
