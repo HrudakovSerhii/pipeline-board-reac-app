@@ -1,3 +1,5 @@
+import { formatDate } from '../../utils/date'
+
 export interface DeclinedNoticeProps {
   reason: string
   declinedBy: string
@@ -5,14 +7,10 @@ export interface DeclinedNoticeProps {
 }
 
 export function DeclinedNotice({ reason, declinedBy, declinedAt }: DeclinedNoticeProps) {
-  const date = new Date(declinedAt).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  })
+  const date = formatDate(declinedAt)
 
   return (
-    <div className="w-full border-l-2 border-declined pl-[12px] py-[4px] flex flex-col gap-[2px]">
+    <div className="w-full border-l-2 border-declined pl-3 py-1 flex flex-col gap-0.5">
       <span className="text-[11px] text-declined">{reason}</span>
       <span className="text-[10px] text-secondary">
         Sent by {declinedBy} · {date}

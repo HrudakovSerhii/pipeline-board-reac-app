@@ -15,7 +15,7 @@ import {
   ScaleIcon,
   DollarIcon,
   CopyIcon,
-} from './nav-icons'
+} from './icons'
 
 export const NAV_ICON_MAP: Record<string, ComponentType> = {
   'vac-grid': GridIcon,

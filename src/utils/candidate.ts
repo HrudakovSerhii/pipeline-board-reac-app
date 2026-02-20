@@ -1,4 +1,10 @@
-import type { CandidateRate, EngagementMode, PipelineStage, RatePeriod, VacancyBudget } from '../types/api.types'
+import type {
+  CandidateRate,
+  EmploymentType,
+  PipelineStage,
+  RatePeriod,
+  VacancyBudget,
+} from '../types/api.types'
 
 export const Stage = {
   applications: 'applications',
@@ -43,10 +49,11 @@ const PERIOD_DISPLAY: Record<RatePeriod, string> = {
   year: 'Yearly salary',
 }
 
-const MODE_DISPLAY: Record<EngagementMode, string> = {
+const MODE_DISPLAY: Record<EmploymentType, string> = {
   freelance: 'Freelance',
-  contractor: 'Payroll contractor',
-  employment: 'Permanent employment',
+  contract: 'Payroll contractor',
+  'full-time': 'Permanent employment',
+  'part-time': 'Part time employment',
 }
 
 const STAGE_LABEL: Record<PipelineStage, string> = {
@@ -58,10 +65,10 @@ const STAGE_LABEL: Record<PipelineStage, string> = {
   not_proceeding: 'Not Proceeding',
 }
 
-export function formatRate(rate: CandidateRate): string {
-  const symbol = currencySymbol(rate.currency)
-  const amount = formatNumber(rate.amount)
-  const period = PERIOD_LABEL[rate.period]
+export function formatCompensationRate(compensation: CandidateRate): string {
+  const symbol = currencySymbol(compensation.currency)
+  const amount = formatNumber(compensation.amount)
+  const period = PERIOD_LABEL[compensation.period]
   return `${symbol}${amount}/${period}`
 }
 
@@ -79,7 +86,14 @@ export function stageLabel(stage: PipelineStage): string {
 
 /** Formats a number with space as thousands separator: 15000 → "15 000", 150000 → "150 000" */
 export function formatNumber(n: number): string {
-  return Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0')
+  return Math.floor(n)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0')
+}
+
+export function formatCandidateRate(rate: CandidateRate): string {
+  const symbol = currencySymbol(rate.currency)
+  return `${formatNumber(rate.amount)} ${symbol}/${rate.period}`
 }
 
 export function formatBudgetRange(budget: VacancyBudget): string {
@@ -88,9 +102,9 @@ export function formatBudgetRange(budget: VacancyBudget): string {
 }
 
 export function budgetLabel(budget: VacancyBudget): { title: string; subtitle: string } {
-  return { title: MODE_DISPLAY[budget.mode], subtitle: PERIOD_DISPLAY[budget.period] }
+  return { title: MODE_DISPLAY[budget.type], subtitle: PERIOD_DISPLAY[budget.period] }
 }
 
-export function rateModeLabel(mode: EngagementMode): string {
+export function rateModeLabel(mode: EmploymentType): string {
   return MODE_DISPLAY[mode]
 }

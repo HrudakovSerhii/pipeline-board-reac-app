@@ -1,6 +1,6 @@
-import icons from '../../../assets/icons'
 import { cn } from '../../../utils/cn'
 import { nameInitials } from '../../../utils/string'
+import { GloProIcon } from '../icons'
 
 export interface AvatarProps {
   name: string
@@ -12,7 +12,7 @@ export interface AvatarProps {
 
 export function Avatar({ name, avatarUrl, isGloPros, isBlurred, size = 'md' }: AvatarProps) {
   const initials = nameInitials(name)
-  const sizeClass = size === 'sm' ? 'size-[36px] text-[12px]' : 'size-[44px] text-[14px]'
+  const sizeClass = size === 'sm' ? 'text-4xl text-xs' : 'size-[44px] text-sm'
 
   return (
     <div className="flex items-center justify-center relative">
@@ -36,12 +36,9 @@ export function Avatar({ name, avatarUrl, isGloPros, isBlurred, size = 'md' }: A
       </div>
 
       {isGloPros && (
-        <div className="absolute bottom-0 right-0 bg-glopros rounded-tl-[6px] size-[14px] flex items-center justify-center">
+        <div className="absolute bottom-0 right-0 bg-glopros rounded-tl-sm size-3.5 flex items-center justify-center">
           {/* GloPros badge — inline SVG, size runtime-independent */}
-          <svg width="8" height="10" fill="none" viewBox="0 0 12.5 16.1">
-            <path d={icons.pb62d5c0} fill="white" />
-            <path d={icons.p1ca40480} className="fill-glopros" />
-          </svg>
+          <GloProIcon />
         </div>
       )}
     </div>

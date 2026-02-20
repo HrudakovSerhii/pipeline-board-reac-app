@@ -1,2 +1,2 @@
-export { VacancyCard } from './VacancyCard'
-export type { VacancyCardProps } from './VacancyCard'
+export { VacancyView } from './VacancyView.tsx'
+export type { VacancyViewProps } from './VacancyView.tsx'

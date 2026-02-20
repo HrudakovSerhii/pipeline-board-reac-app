@@ -1,9 +1,10 @@
 import { resolveDropStage } from './board.utils'
-import type { Candidate } from '../../types/api.types'
+import type { Candidate, PipelineStage } from '../../types/api.types'
 import { Stage } from '../../utils/candidate'
 
-function makeCandidate(overrides: Partial<Candidate> & { id: string }): Candidate {
+function makeCandidate(id: string, stage: PipelineStage): Candidate {
   return {
+    id,
     name: 'Test User',
     role: 'Developer',
     location: 'Berlin, Germany',
@@ -11,20 +12,19 @@ function makeCandidate(overrides: Partial<Candidate> & { id: string }): Candidat
     skills: [],
     postedAt: '2026-01-01T00:00:00Z',
     compensation: [],
-    matchScore: 80,
-    stage: 'applications',
+    aiAnalise: { matchScore: 80 },
+    process: { stage },
     isShortlisted: false,
     isGloPros: false,
-    ...overrides,
   }
 }
 
 const STAGES = Object.values(Stage) as Array<(typeof Stage)[keyof typeof Stage]>
 
 const candidates: Candidate[] = [
-  makeCandidate({ id: 'c1', stage: Stage.applications }),
-  makeCandidate({ id: 'c2', stage: Stage.under_review }),
-  makeCandidate({ id: 'c3', stage: Stage.hired }),
+  makeCandidate('c1', Stage.applications),
+  makeCandidate('c2', Stage.under_review),
+  makeCandidate('c3', Stage.hired),
 ]
 
 describe('resolveDropStage', () => {

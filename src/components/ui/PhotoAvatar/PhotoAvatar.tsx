@@ -12,7 +12,7 @@ export function PhotoAvatar({ name, avatarUrl }: PhotoAvatarProps) {
   return (
     <div
       className={cn(
-        'size-[24px] shrink-0 rounded-full flex items-center justify-center overflow-hidden text-[10px] font-medium leading-none select-none',
+        'size-6 shrink-0 rounded-full flex items-center justify-center overflow-hidden text-[10px] font-medium leading-none select-none',
         !avatarUrl && 'bg-white text-brand-dark',
       )}
     >

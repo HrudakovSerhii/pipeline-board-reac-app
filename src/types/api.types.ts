@@ -8,11 +8,11 @@ export type PipelineStage =
   | 'hired'
   | 'not_proceeding'
 
-export type AvailabilityStatus = 'available' | 'unavailable' | 'soon'
+export type AvailabilityStatus = 'available' | 'unavailable' | 'now'
 
 export type VacancyStatus = 'Public' | 'Private' | 'Draft' | 'Closed'
 
-export type EmploymentType = 'Full-time' | 'Part-time' | 'Contract' | 'Freelance'
+export type EmploymentType = 'full-time' | 'part-time' | 'contract' | 'freelance'
 
 /** ISO 4217 currency codes (common subset + open string for extensibility) */
 export type Currency = 'EUR' | 'USD' | 'GBP' | 'CHF' | 'PLN' | 'SEK' | (string & {})
@@ -36,28 +36,26 @@ export interface Person {
   avatarUrl?: string
 }
 
-// ─── Compensation primitives (shared by candidate + vacancy) ─────────────────
-
-export type EngagementMode = 'freelance' | 'contractor' | 'employment'
-
 // ─── Candidate compensation ───────────────────────────────────────────────────
 
-/** Single asking rate for one engagement mode. */
-export interface CandidateRate {
-  mode: EngagementMode
+export interface Rate {
   amount: number
   currency: Currency
   period: RatePeriod
 }
 
+export interface CandidateRate extends Rate {
+  type: EmploymentType
+}
+
 // ─── Vacancy budget ───────────────────────────────────────────────────────────
 
 export interface VacancyBudget {
-  mode: EngagementMode
+  type: EmploymentType
+  period: RatePeriod
   min: number
   max: number
-  currency: Currency
-  period: RatePeriod
+  currency: string
 }
 
 // ─── AI scoring ───────────────────────────────────────────────────────────────
@@ -67,9 +65,9 @@ export interface AiMatchBreakdown {
   experience: number // 0–100
   skills: number // 0–100
   rate: number // 0–100
-  location: number // 0 = no match, 100 = exact match
-  availability: number // 0–100
-  industry: number // 0–100
+  distance: string // distance to job location in km
+  availability: boolean
+  industry: boolean
 }
 
 // ─── Entities ─────────────────────────────────────────────────────────────────
@@ -86,6 +84,19 @@ export interface VacancyManagement {
   workspace: string // e.g. "Private Workspace"
 }
 
+export interface CandidateProcess {
+  stage: PipelineStage
+  /** Offer acceptance — set when stage transitions to 'hired'. */
+  hiredAt?: string // ISO 8601
+  hiredBy?: string // recruiter name
+  /** Decline info — set when stage transitions to 'not_proceeding'. */
+  declinedAt?: string // ISO 8601
+  declinedBy?: string
+  declineReason?: string
+  /** Recruiter-authored note from the vacancy-candidate negotiation; absent if not negotiated. */
+  negotiationNote?: string
+}
+
 export interface Candidate {
   id: string
   name: string
@@ -96,22 +107,14 @@ export interface Candidate {
   skills: Skill[]
   postedAt: string // ISO 8601 datetime
   compensation: CandidateRate[]
-  matchScore: number // 0–100
-  stage: PipelineStage
+  aiAnalise: {
+    matchScore: number // 0–100,
+    matchBreakdown?: AiMatchBreakdown
+  }
+  process: CandidateProcess
   isShortlisted: boolean
   /** True if the candidate is a registered GloPros platform professional. */
   isGloPros: boolean
-  /** Recruiter-authored note from the vacancy-candidate negotiation; absent if not negotiated. */
-  negotiationNote?: string
-  /** Per-category AI breakdown. Absent for candidates not yet scored against this vacancy. */
-  aiMatchBreakdown?: AiMatchBreakdown
-  /** Offer acceptance — set when stage transitions to 'hired'. */
-  hiredAt?: string // ISO 8601
-  hiredBy?: string // recruiter name
-  /** Decline info — set when stage transitions to 'not_proceeding'. */
-  declinedAt?: string // ISO 8601
-  declinedBy?: string
-  declineReason?: string
 }
 
 export interface Vacancy {
@@ -119,22 +122,27 @@ export interface Vacancy {
   jobTitle: string
   clientName: string
   status: VacancyStatus
-  employmentType: EmploymentType
+  preferredEmploymentType: EmploymentType
   hoursPerWeek: number
   location: string
   workPeriod: DateRange
   publicationPeriod: DateRange
-  aiMatchesCount: number
   budgets: VacancyBudget[]
   management: VacancyManagement
+  aiMatches: number
 }
 
 // ─── API shapes ───────────────────────────────────────────────────────────────
 
-/** GET /api/board */
-export interface BoardResponse {
-  vacancy: Vacancy
+/** GET /api/candidates/:vacancyId */
+export interface CandidatesResponse {
   candidates: Candidate[]
+  totalCount: number
+}
+
+/** GET /api/vacancy/:id */
+export interface VacancyResponse {
+  vacancy: Vacancy
 }
 
 /** PATCH /api/candidates/:id */

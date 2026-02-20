@@ -1,7 +1,7 @@
 import { cn } from '../../../utils/cn'
-import { NAV_ICON_MAP } from '../../ui/icons'
+import { NAV_ICON_MAP, ChevronIcon } from '../../ui/icons'
+
 import type { NavSection } from './constants'
-import { ChevronIcon } from '../../ui/icons/nav-icons.tsx'
 
 interface NavSectionBlockProps {
   section: NavSection
@@ -46,7 +46,7 @@ export function NavSectionBlock({
       <div
         className={cn(
           'overflow-hidden transition-all duration-300',
-          isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0',
+          isOpen ? 'max-h-100 opacity-100' : 'max-h-0 opacity-0',
         )}
       >
         <div className="flex flex-col gap-1 px-2 pb-1">
@@ -70,7 +70,7 @@ export function NavSectionBlock({
                 <span
                   className={cn(
                     'text-sm whitespace-nowrap overflow-hidden transition-all duration-200',
-                    isExpanded ? 'max-w-[140px] opacity-100' : 'hidden max-w-0 opacity-0',
+                    isExpanded ? 'max-w-35 opacity-100' : 'hidden max-w-0 opacity-0',
                   )}
                 >
                   {item.label}

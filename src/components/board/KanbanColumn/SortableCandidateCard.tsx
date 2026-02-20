@@ -1,7 +1,8 @@
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import type { Candidate, PipelineStage } from '../../../types/api.types'
 import { CandidateCard } from '../../candidate/CandidateCard'
+
+import type { Candidate, PipelineStage } from '../../../types/api.types'
 
 interface SortableCandidateCardProps {
   candidate: Candidate
