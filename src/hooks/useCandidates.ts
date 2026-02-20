@@ -6,6 +6,10 @@ import { getLocalStorage, setLocalStorage } from '../utils/localStorage'
 
 const STORAGE_KEY = 'board-candidates-'
 
+type Settled =
+  | { id: string; result: 'success'; candidates: Candidate[] }
+  | { id: string; result: 'error'; error: Error }
+
 interface CandidatesState {
   candidates: Array<Candidate> | null
   isLoading: boolean
@@ -13,68 +17,74 @@ interface CandidatesState {
   moveCandidate: (id: string, stage: PipelineStage) => void
 }
 
-export function useCandidates(vacancyId: string): CandidatesState {
-  const [candidates, setCandidates] = useState<Array<Candidate> | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<Error | null>(null)
+export function useCandidates(vacancyId: string | null): CandidatesState {
+  const [settled, setSettled] = useState<Settled | null>(null)
+
+  const isLoading = vacancyId !== null && settled?.id !== vacancyId
+  const candidates = settled?.result === 'success' && settled.id === vacancyId ? settled.candidates : null
+  const error = settled?.result === 'error' && settled.id === vacancyId ? settled.error : null
 
   useEffect(() => {
+    if (!vacancyId) return
+
+    const controller = new AbortController()
     let cancelled = false
 
-    getCandidates(vacancyId)
+    getCandidates(vacancyId, controller.signal)
       .then((data) => {
         if (cancelled) return
 
-        const savedCandidates = getLocalStorage<Candidate[] | null>(STORAGE_KEY + vacancyId, null)
+        const saved = getLocalStorage<Candidate[] | null>(STORAGE_KEY + vacancyId, null)
         let resolved = data.candidates
 
-        if (savedCandidates) {
-          const stageById = new Map(savedCandidates.map((c) => [c.id, c.process.stage]))
+        if (saved) {
+          const stageById = new Map(saved.map((c) => [c.id, c.process.stage]))
           resolved = data.candidates.map((c) => ({
             ...c,
-            process: {
-              ...c.process,
-              stage: stageById.get(c.id) ?? c.process.stage,
-            },
+            process: { ...c.process, stage: stageById.get(c.id) ?? c.process.stage },
           }))
         }
 
-        setCandidates(resolved)
+        setSettled({ id: vacancyId, result: 'success', candidates: resolved })
       })
       .catch((err: unknown) => {
         if (cancelled) return
-        setError(err instanceof Error ? err : new Error(String(err)))
-      })
-      .finally(() => {
-        if (!cancelled) setIsLoading(false)
+        if (err instanceof Error && err.name === 'AbortError') return
+        setSettled({
+          id: vacancyId,
+          result: 'error',
+          error: err instanceof Error ? err : new Error(String(err)),
+        })
       })
 
     return () => {
       cancelled = true
+      controller.abort()
     }
   }, [vacancyId])
 
   const moveCandidate = useCallback(
     (id: string, stage: PipelineStage) => {
-      if (!candidates) return
+      if (settled?.result !== 'success' || settled.id !== vacancyId || !vacancyId) return
 
-      const previous = candidates
-      const updated = candidates.map((c) =>
+      const snapshot = settled
+      const updated = settled.candidates.map((c) =>
         c.id === id ? { ...c, process: { ...c.process, stage } } : c,
       )
 
-      setCandidates(updated)
+      setSettled({ ...settled, candidates: updated })
 
       updateCandidate(id, { stage })
         .then(() => {
           setLocalStorage(STORAGE_KEY + vacancyId, updated)
         })
         .catch((err: unknown) => {
-          setCandidates(previous)
-          setError(err instanceof Error ? err : new Error(String(err)))
+          setSettled(snapshot)
+          // surface move error without overwriting fetch error state
+          console.error('Failed to persist stage change', err)
         })
     },
-    [candidates, vacancyId],
+    [settled, vacancyId],
   )
 
   return { candidates, isLoading, error, moveCandidate }
