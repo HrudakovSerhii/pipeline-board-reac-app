@@ -1,6 +1,6 @@
 import { MainLayout } from './components/layout/layout.main'
 
-import ErrorBoundary from './components/layout/VacancyCard/ErrorBoundary.tsx'
+import { ErrorBoundary } from './components/layout/ErrorBoundery'
 
 export default function App() {
   return (
