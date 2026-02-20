@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 
 import { Stage } from '../../../utils/candidate'
 import { DownIcon } from '../../ui/icons'
@@ -22,7 +22,7 @@ export interface CandidateCardProps {
 
 const VISIBLE_SKILLS = 3
 
-export function CandidateCard({ candidate, stage }: CandidateCardProps) {
+export const CandidateCard = memo(function CandidateCard({ candidate, stage }: CandidateCardProps) {
   const isApplications = stage === Stage.applications
   const candidateProcess = candidate.process
 
@@ -98,4 +98,4 @@ export function CandidateCard({ candidate, stage }: CandidateCardProps) {
       </div>
     </div>
   )
-}
+})
