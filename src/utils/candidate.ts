@@ -93,7 +93,7 @@ export function formatNumber(n: number): string {
 
 export function formatCandidateRate(rate: CandidateRate): string {
   const symbol = currencySymbol(rate.currency)
-  return `${formatNumber(rate.amount)} ${symbol}/${PERIOD_DISPLAY[rate.period]}`
+  return `${formatNumber(rate.amount)} ${symbol}/${rate.period}`
 }
 
 export function formatBudgetRange(budget: VacancyBudget): string {

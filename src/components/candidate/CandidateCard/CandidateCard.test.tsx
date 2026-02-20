@@ -149,6 +149,6 @@ describe('CandidateCard', () => {
   it('renders compensation info', () => {
     renderCard(Stage.contract_offer)
 
-    expect(screen.getByText('$80/h')).toBeInTheDocument()
+    expect(screen.getByText('80 $/hour')).toBeInTheDocument()
   })
 })
