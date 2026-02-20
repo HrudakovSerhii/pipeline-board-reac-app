@@ -16,13 +16,13 @@ const STRINGS: Array<{ key: keyof AiMatchBreakdownType; label: string }> = [
   { key: 'industry', label: 'Industry:' },
 ]
 
-function displayValue(key: keyof AiMatchBreakdownType, value: number | string): string {
+function displayValue(key: keyof AiMatchBreakdownType, value: number | string | boolean): string {
   switch (key) {
     case 'availability':
     case 'industry':
       return value ? 'No match' : 'Match'
     case 'distance':
-      return `${value} km away` // maybe km in number
+      return `${value}` // maybe km in number
     default:
       return value === 0 ? 'No match' : `${value}%`
   }
@@ -60,7 +60,9 @@ export function AiMatchBreakdown({ breakdown }: AiMatchBreakdownProps) {
           return (
             <div key={key} className="flex gap-2 justify-end w-full">
               <span className="text-[11px] text-muted-foreground w-20 shrink-0">{label}</span>
-              <span className="text-[11px] text-ai-text w-13.75 text-right shrink-0">{value}</span>
+              <span className="text-[11px] text-ai-text w-13.75 text-right shrink-0">
+                {displayValue(key, value)}
+              </span>
             </div>
           )
         })}
