@@ -3,10 +3,14 @@ import { ApiError } from './api.errors'
 
 import type { Candidate, CandidatesResponse, UpdateCandidateRequest } from '../types/api.types'
 
-export async function getCandidates(vacancyId: string): Promise<CandidatesResponse> {
+export async function getCandidates(
+  vacancyId: string,
+  signal?: AbortSignal,
+): Promise<CandidatesResponse> {
   const response = await fetch(`${API_BASE_URL}${CANDIDATE_PATHS.list(vacancyId)}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
+    signal,
   })
   if (!response.ok) {
     throw new ApiError(response.status, response)
