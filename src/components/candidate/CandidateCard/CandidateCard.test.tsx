@@ -17,11 +17,13 @@ function makeCandidate(overrides: Partial<Candidate> = {}): Candidate {
       { id: 's4', label: 'Node.js' },
     ],
     postedAt: '2026-01-15T00:00:00Z',
-    compensation: [
-      { mode: 'freelance', amount: 80, currency: 'USD', period: 'hour' },
-    ],
-    matchScore: 85,
-    stage: 'applications',
+    compensation: [{ type: 'freelance', amount: 80, currency: 'USD', period: 'hour' }],
+    aiAnalise: {
+      matchScore: 85,
+    },
+    process: {
+      stage: 'applications',
+    },
     isShortlisted: false,
     isGloPros: false,
     ...overrides,
@@ -29,7 +31,8 @@ function makeCandidate(overrides: Partial<Candidate> = {}): Candidate {
 }
 
 function renderCard(stage: PipelineStage, overrides: Partial<Candidate> = {}) {
-  const candidate = makeCandidate({ stage, ...overrides })
+  const { process: processOverride, ...rest } = overrides
+  const candidate = makeCandidate({ ...rest, process: { ...processOverride, stage } })
   return render(<CandidateCard candidate={candidate} stage={stage} />)
 }
 
@@ -54,12 +57,12 @@ describe('CandidateCard', () => {
       experience: 90,
       skills: 80,
       rate: 70,
-      location: 100,
-      availability: 85,
-      industry: 60,
+      distance: '50km',
+      availability: true,
+      industry: true,
     }
 
-    renderCard(Stage.applications, { aiMatchBreakdown: breakdown })
+    renderCard(Stage.applications, { aiAnalise: { matchScore: 85, matchBreakdown: breakdown } })
     expect(screen.getByText('Experience:')).toBeInTheDocument()
     expect(screen.getByText('Skills:')).toBeInTheDocument()
   })
@@ -69,12 +72,12 @@ describe('CandidateCard', () => {
       experience: 90,
       skills: 80,
       rate: 70,
-      location: 100,
-      availability: 85,
-      industry: 60,
+      distance: '50km',
+      availability: true,
+      industry: true,
     }
 
-    renderCard(Stage.under_review, { aiMatchBreakdown: breakdown })
+    renderCard(Stage.under_review, { aiAnalise: { matchScore: 85, matchBreakdown: breakdown } })
     expect(screen.queryByText('Experience:')).not.toBeInTheDocument()
   })
 
@@ -98,8 +101,7 @@ describe('CandidateCard', () => {
 
   it('shows hired notice when stage is hired with required fields', () => {
     renderCard(Stage.hired, {
-      hiredAt: '2026-02-01T00:00:00Z',
-      hiredBy: 'John Smith',
+      process: { stage: Stage.hired, hiredAt: '2026-02-01T00:00:00Z', hiredBy: 'John Smith' },
     })
 
     expect(screen.getByText('Professional has accepted the offer')).toBeInTheDocument()
@@ -107,16 +109,19 @@ describe('CandidateCard', () => {
   })
 
   it('hides hired notice when hiredAt is missing', () => {
-    renderCard(Stage.hired, { hiredBy: 'John Smith' })
+    renderCard(Stage.hired, { process: { stage: Stage.hired, hiredBy: 'John Smith' } })
 
     expect(screen.queryByText('Professional has accepted the offer')).not.toBeInTheDocument()
   })
 
   it('shows declined notice when stage is not_proceeding with required fields', () => {
     renderCard(Stage.not_proceeding, {
-      declinedAt: '2026-02-10T00:00:00Z',
-      declinedBy: 'Jane Recruiter',
-      declineReason: 'Salary expectations too high',
+      process: {
+        stage: Stage.not_proceeding,
+        declinedAt: '2026-02-10T00:00:00Z',
+        declinedBy: 'Jane Recruiter',
+        declineReason: 'Salary expectations too high',
+      },
     })
 
     expect(screen.getByText('Salary expectations too high')).toBeInTheDocument()
@@ -125,8 +130,11 @@ describe('CandidateCard', () => {
 
   it('hides declined notice when declineReason is missing', () => {
     renderCard(Stage.not_proceeding, {
-      declinedAt: '2026-02-10T00:00:00Z',
-      declinedBy: 'Jane Recruiter',
+      process: {
+        stage: Stage.not_proceeding,
+        declinedAt: '2026-02-10T00:00:00Z',
+        declinedBy: 'Jane Recruiter',
+      },
     })
 
     expect(screen.queryByText(/Jane Recruiter/)).not.toBeInTheDocument()
